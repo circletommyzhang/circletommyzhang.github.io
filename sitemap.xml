@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://circletommyzhang.github.io/2022/08/19/%E5%85%B3%E4%BA%8E%E5%8D%B7/</loc>
+    
+    <lastmod>2022-08-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://circletommyzhang.github.io/2022/08/19/test/</loc>
     
     <lastmod>2022-08-19</lastmod>
@@ -176,14 +185,28 @@
   </url>
   
   <url>
-    <loc>https://circletommyzhang.github.io/tags/%E7%8C%8E%E5%A4%B4/</loc>
+    <loc>https://circletommyzhang.github.io/tags/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/</loc>
     <lastmod>2022-08-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://circletommyzhang.github.io/tags/%E5%8F%91%E5%B1%95/</loc>
+    <loc>https://circletommyzhang.github.io/tags/%E5%8C%BB%E7%96%97/</loc>
+    <lastmod>2022-08-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://circletommyzhang.github.io/tags/%E6%94%B6%E8%B4%AD/</loc>
+    <lastmod>2022-08-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://circletommyzhang.github.io/tags/%E6%8A%95%E8%B5%84/</loc>
     <lastmod>2022-08-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -198,6 +221,20 @@
   
   <url>
     <loc>https://circletommyzhang.github.io/tags/%E5%B7%A5%E4%BD%9C/</loc>
+    <lastmod>2022-08-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://circletommyzhang.github.io/tags/%E7%8C%8E%E5%A4%B4/</loc>
+    <lastmod>2022-08-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://circletommyzhang.github.io/tags/%E5%8F%91%E5%B1%95/</loc>
     <lastmod>2022-08-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -248,7 +285,7 @@
   </url>
   
   <url>
-    <loc>https://circletommyzhang.github.io/categories/%E5%85%B3%E4%BA%8E%E7%8C%8E%E5%A4%B4/</loc>
+    <loc>https://circletommyzhang.github.io/categories/%E5%A5%BD%E6%96%87%E5%88%86%E4%BA%AB/</loc>
     <lastmod>2022-08-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -263,6 +300,13 @@
   
   <url>
     <loc>https://circletommyzhang.github.io/categories/%E8%81%8C%E5%9C%BA%E9%97%AE%E7%AD%94/</loc>
+    <lastmod>2022-08-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://circletommyzhang.github.io/categories/%E5%85%B3%E4%BA%8E%E7%8C%8E%E5%A4%B4/</loc>
     <lastmod>2022-08-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
