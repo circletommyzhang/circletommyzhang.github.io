@@ -47,33 +47,6 @@
   </entry>
   
   <entry>
-    <title>test</title>
-    <link href="https://circletommyzhang.github.io/2022/08/19/test/"/>
-    <id>https://circletommyzhang.github.io/2022/08/19/test/</id>
-    <published>2022-08-19T13:16:19.000Z</published>
-    <updated>2022-08-19T13:18:10.968Z</updated>
-    
-    
-      
-      
-    <summary type="html">&lt;h4 id=&quot;这是一个测试&quot;&gt;&lt;a href=&quot;#这是一个测试&quot; class=&quot;headerlink&quot; title=&quot;这是一个测试&quot;&gt;&lt;/a&gt;这是一个测试&lt;/h4&gt;&lt;p&gt;hello world&lt;/p&gt;
-</summary>
-      
-    
-    
-    
-    <category term="Circle招聘" scheme="https://circletommyzhang.github.io/categories/Circle%E6%8B%9B%E8%81%98/"/>
-    
-    
-    <category term="机会" scheme="https://circletommyzhang.github.io/tags/%E6%9C%BA%E4%BC%9A/"/>
-    
-    <category term="招聘" scheme="https://circletommyzhang.github.io/tags/%E6%8B%9B%E8%81%98/"/>
-    
-    <category term="未来" scheme="https://circletommyzhang.github.io/tags/%E6%9C%AA%E6%9D%A5/"/>
-    
-  </entry>
-  
-  <entry>
     <title>某互联网大厂(Base新加坡)</title>
     <link href="https://circletommyzhang.github.io/2022/08/18/%E6%9F%90%E4%BA%92%E8%81%94%E7%BD%91%E5%A4%A7%E5%8E%82-Base%E6%96%B0%E5%8A%A0%E5%9D%A1/"/>
     <id>https://circletommyzhang.github.io/2022/08/18/%E6%9F%90%E4%BA%92%E8%81%94%E7%BD%91%E5%A4%A7%E5%8E%82-Base%E6%96%B0%E5%8A%A0%E5%9D%A1/</id>
@@ -180,9 +153,9 @@
     <category term="职场问答" scheme="https://circletommyzhang.github.io/categories/%E8%81%8C%E5%9C%BA%E9%97%AE%E7%AD%94/"/>
     
     
-    <category term="工作" scheme="https://circletommyzhang.github.io/tags/%E5%B7%A5%E4%BD%9C/"/>
-    
     <category term="猎头" scheme="https://circletommyzhang.github.io/tags/%E7%8C%8E%E5%A4%B4/"/>
+    
+    <category term="工作" scheme="https://circletommyzhang.github.io/tags/%E5%B7%A5%E4%BD%9C/"/>
     
   </entry>
   
@@ -206,9 +179,9 @@
     <category term="职场思考" scheme="https://circletommyzhang.github.io/categories/%E8%81%8C%E5%9C%BA%E6%80%9D%E8%80%83/"/>
     
     
-    <category term="规划" scheme="https://circletommyzhang.github.io/tags/%E8%A7%84%E5%88%92/"/>
-    
     <category term="工作" scheme="https://circletommyzhang.github.io/tags/%E5%B7%A5%E4%BD%9C/"/>
+    
+    <category term="规划" scheme="https://circletommyzhang.github.io/tags/%E8%A7%84%E5%88%92/"/>
     
     <category term="跳槽" scheme="https://circletommyzhang.github.io/tags/%E8%B7%B3%E6%A7%BD/"/>
     
@@ -237,9 +210,9 @@
     
     <category term="未来" scheme="https://circletommyzhang.github.io/tags/%E6%9C%AA%E6%9D%A5/"/>
     
-    <category term="规划" scheme="https://circletommyzhang.github.io/tags/%E8%A7%84%E5%88%92/"/>
-    
     <category term="工作" scheme="https://circletommyzhang.github.io/tags/%E5%B7%A5%E4%BD%9C/"/>
+    
+    <category term="规划" scheme="https://circletommyzhang.github.io/tags/%E8%A7%84%E5%88%92/"/>
     
   </entry>
   
@@ -263,11 +236,11 @@
     <category term="职场思考" scheme="https://circletommyzhang.github.io/categories/%E8%81%8C%E5%9C%BA%E6%80%9D%E8%80%83/"/>
     
     
-    <category term="工作" scheme="https://circletommyzhang.github.io/tags/%E5%B7%A5%E4%BD%9C/"/>
-    
     <category term="管理" scheme="https://circletommyzhang.github.io/tags/%E7%AE%A1%E7%90%86/"/>
     
     <category term="效率" scheme="https://circletommyzhang.github.io/tags/%E6%95%88%E7%8E%87/"/>
+    
+    <category term="工作" scheme="https://circletommyzhang.github.io/tags/%E5%B7%A5%E4%BD%9C/"/>
     
   </entry>
   
