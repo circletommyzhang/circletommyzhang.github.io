@@ -6,7 +6,7 @@
   <link href="https://circletommyzhang.github.io/atom.xml" rel="self"/>
   
   <link href="https://circletommyzhang.github.io/"/>
-  <updated>2022-08-18T08:34:28.000Z</updated>
+  <updated>2022-08-20T03:14:04.047Z</updated>
   <id>https://circletommyzhang.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://circletommyzhang.github.io/2022/08/18/%E6%9F%90%E4%BA%92%E8%81%94%E7%BD%91%E5%A4%A7%E5%8E%82-Base%E6%96%B0%E5%8A%A0%E5%9D%A1/"/>
     <id>https://circletommyzhang.github.io/2022/08/18/%E6%9F%90%E4%BA%92%E8%81%94%E7%BD%91%E5%A4%A7%E5%8E%82-Base%E6%96%B0%E5%8A%A0%E5%9D%A1/</id>
     <published>2022-08-18T07:30:36.000Z</published>
-    <updated>2022-08-18T08:34:28.000Z</updated>
+    <updated>2022-08-20T03:14:04.047Z</updated>
     
     
       
@@ -37,13 +37,15 @@
     <category term="工作机会" scheme="https://circletommyzhang.github.io/categories/%E5%B7%A5%E4%BD%9C%E6%9C%BA%E4%BC%9A/"/>
     
     
-    <category term="机会" scheme="https://circletommyzhang.github.io/tags/%E6%9C%BA%E4%BC%9A/"/>
+    <category term="新加坡" scheme="https://circletommyzhang.github.io/tags/%E6%96%B0%E5%8A%A0%E5%9D%A1/"/>
     
-    <category term="未来" scheme="https://circletommyzhang.github.io/tags/%E6%9C%AA%E6%9D%A5/"/>
+    <category term="工作机会" scheme="https://circletommyzhang.github.io/tags/%E5%B7%A5%E4%BD%9C%E6%9C%BA%E4%BC%9A/"/>
     
-    <category term="工作" scheme="https://circletommyzhang.github.io/tags/%E5%B7%A5%E4%BD%9C/"/>
+    <category term="风控算法" scheme="https://circletommyzhang.github.io/tags/%E9%A3%8E%E6%8E%A7%E7%AE%97%E6%B3%95/"/>
     
-    <category term="某互联网大厂" scheme="https://circletommyzhang.github.io/tags/%E6%9F%90%E4%BA%92%E8%81%94%E7%BD%91%E5%A4%A7%E5%8E%82/"/>
+    <category term="大厂" scheme="https://circletommyzhang.github.io/tags/%E5%A4%A7%E5%8E%82/"/>
+    
+    <category term="算法" scheme="https://circletommyzhang.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
