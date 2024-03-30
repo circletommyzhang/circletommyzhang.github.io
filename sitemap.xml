@@ -310,13 +310,6 @@
   </url>
   
   <url>
-    <loc>https://circletommyzhang.github.io/tags/%E5%8F%91%E5%B1%95/</loc>
-    <lastmod>2024-03-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://circletommyzhang.github.io/tags/%E7%AE%A1%E7%90%86/</loc>
     <lastmod>2024-03-30</lastmod>
     <changefreq>weekly</changefreq>
@@ -360,6 +353,13 @@
   
   <url>
     <loc>https://circletommyzhang.github.io/tags/%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2024-03-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://circletommyzhang.github.io/tags/%E5%8F%91%E5%B1%95/</loc>
     <lastmod>2024-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -431,14 +431,14 @@
   </url>
   
   <url>
-    <loc>https://circletommyzhang.github.io/categories/%E5%85%B3%E4%BA%8E%E7%8C%8E%E5%A4%B4/</loc>
+    <loc>https://circletommyzhang.github.io/categories/%E5%B7%A5%E4%BD%9C%E6%9C%BA%E4%BC%9A/</loc>
     <lastmod>2024-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://circletommyzhang.github.io/categories/%E5%B7%A5%E4%BD%9C%E6%9C%BA%E4%BC%9A/</loc>
+    <loc>https://circletommyzhang.github.io/categories/%E5%85%B3%E4%BA%8E%E7%8C%8E%E5%A4%B4/</loc>
     <lastmod>2024-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
