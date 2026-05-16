@@ -9220,3 +9220,100 @@ body.okayNav-loaded {
   overflow-wrap: anywhere;
   word-break: break-word;
 }
+
+.home-main {
+  min-height: 100vh;
+}
+
+.home-intro {
+  min-height: calc(100vh - 60px);
+  display: grid;
+  grid-template-columns: minmax(280px, 44%) minmax(320px, 1fr);
+  gap: 52px;
+  align-items: center;
+  padding: 48px 0;
+}
+
+.home-intro-photo img {
+  display: block;
+  width: 100%;
+  max-height: calc(100vh - 96px);
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+.home-intro-copy {
+  max-width: 680px;
+}
+
+.home-intro-kicker {
+  margin-bottom: 18px;
+  color: #777;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.home-intro h1 {
+  margin: 0 0 24px;
+  font-size: 46px;
+  font-weight: 700;
+  line-height: 1.18;
+  letter-spacing: 0;
+}
+
+.home-intro-lead {
+  font-size: 22px;
+  line-height: 1.75;
+  color: #333;
+}
+
+.home-intro-copy p {
+  margin-bottom: 18px;
+  font-size: 17px;
+  line-height: 1.9;
+}
+
+.home-intro-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px 26px;
+  align-items: center;
+  margin-top: 32px;
+  font-size: 16px;
+}
+
+.home-intro-link {
+  display: inline-block;
+  color: #0a6ebd;
+  font-weight: 700;
+}
+
+.home-intro-link:hover {
+  color: #064f88;
+  text-decoration: none;
+}
+
+.home-intro-wechat {
+  color: #555;
+}
+
+@media (max-width: 991px) {
+  .home-intro {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    min-height: auto;
+    padding: 28px 0;
+  }
+
+  .home-intro-photo img {
+    max-height: 58vh;
+  }
+
+  .home-intro h1 {
+    font-size: 34px;
+  }
+
+  .home-intro-lead {
+    font-size: 19px;
+  }
+}
