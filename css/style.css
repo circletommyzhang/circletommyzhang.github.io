@@ -9213,3 +9213,10 @@ body.okayNav-loaded {
     max-height: 200px;
   }
 }
+
+.post-copyright-link,
+.post-copyright-link a {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
