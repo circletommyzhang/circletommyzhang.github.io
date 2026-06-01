@@ -284,3 +284,76 @@ li {
     gap: 26px;
   }
 }
+
+@media print {
+  @page {
+    size: A4;
+    margin: 14mm 15mm;
+  }
+
+  html,
+  body {
+    background: #fff;
+  }
+
+  .cv-page {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  .cv-header {
+    padding-bottom: 16px;
+  }
+
+  .cv-section {
+    margin-top: 24px;
+    break-inside: auto;
+  }
+
+  .cv-item {
+    break-inside: avoid;
+  }
+
+  .identity h1 {
+    font-size: 31px;
+  }
+
+  .headline {
+    font-size: 16px;
+  }
+
+  .summary-line,
+  .contact,
+  p,
+  li,
+  .item-head p,
+  .item-head time {
+    font-size: 12.6px;
+  }
+
+  .cv-section h2 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .item-head h3 {
+    font-size: 14px;
+  }
+
+  p {
+    margin-bottom: 6px;
+    line-height: 1.55;
+  }
+
+  li {
+    margin-bottom: 3px;
+    line-height: 1.48;
+  }
+
+  .cv-item {
+    margin-top: 14px;
+  }
+}
