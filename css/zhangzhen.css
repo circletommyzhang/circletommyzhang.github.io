@@ -288,7 +288,7 @@ li {
 @media print {
   @page {
     size: A4;
-    margin: 14mm 15mm;
+    margin: 9mm 12mm;
   }
 
   html,
@@ -305,24 +305,24 @@ li {
   }
 
   .cv-header {
-    padding-bottom: 16px;
+    padding-bottom: 11px;
   }
 
   .cv-section {
-    margin-top: 24px;
+    margin-top: 13px;
     break-inside: auto;
   }
 
   .cv-item {
-    break-inside: avoid;
+    break-inside: auto;
   }
 
   .identity h1 {
-    font-size: 31px;
+    font-size: 28px;
   }
 
   .headline {
-    font-size: 16px;
+    font-size: 14.5px;
   }
 
   .summary-line,
@@ -331,29 +331,29 @@ li {
   li,
   .item-head p,
   .item-head time {
-    font-size: 12.6px;
+    font-size: 12px;
   }
 
   .cv-section h2 {
-    font-size: 16px;
-    margin-bottom: 10px;
+    font-size: 14.5px;
+    margin-bottom: 6px;
   }
 
   .item-head h3 {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   p {
-    margin-bottom: 6px;
-    line-height: 1.55;
+    margin-bottom: 4px;
+    line-height: 1.38;
   }
 
   li {
-    margin-bottom: 3px;
-    line-height: 1.48;
+    margin-bottom: 2px;
+    line-height: 1.35;
   }
 
   .cv-item {
-    margin-top: 14px;
+    margin-top: 7px;
   }
 }
