@@ -288,7 +288,7 @@ li {
 @media print {
   @page {
     size: A4;
-    margin: 9mm 12mm;
+    margin: 8mm 10mm;
   }
 
   html,
@@ -305,11 +305,14 @@ li {
   }
 
   .cv-header {
-    padding-bottom: 11px;
+    grid-template-columns: 86px 1fr;
+    gap: 22px;
+    align-items: center;
+    padding-bottom: 15px;
   }
 
   .cv-section {
-    margin-top: 13px;
+    margin-top: 15px;
     break-inside: auto;
   }
 
@@ -318,11 +321,16 @@ li {
   }
 
   .identity h1 {
-    font-size: 28px;
+    font-size: 33px;
   }
 
   .headline {
-    font-size: 14.5px;
+    font-size: 19px;
+  }
+
+  .avatar {
+    width: 78px;
+    height: 78px;
   }
 
   .summary-line,
@@ -331,20 +339,35 @@ li {
   li,
   .item-head p,
   .item-head time {
-    font-size: 12px;
+    font-size: 12.6px;
+  }
+
+  .contact {
+    display: flex;
+    gap: 4px 11px;
+    margin-top: 9px;
+  }
+
+  .contact span {
+    display: inline;
+  }
+
+  .contact span + span::before {
+    content: "·";
+    margin-right: 11px;
   }
 
   .cv-section h2 {
-    font-size: 14.5px;
-    margin-bottom: 6px;
+    font-size: 16px;
+    margin-bottom: 7px;
   }
 
   .item-head h3 {
-    font-size: 13px;
+    font-size: 15px;
   }
 
   p {
-    margin-bottom: 4px;
+    margin-bottom: 4.5px;
     line-height: 1.38;
   }
 
@@ -354,6 +377,6 @@ li {
   }
 
   .cv-item {
-    margin-top: 7px;
+    margin-top: 9px;
   }
 }
