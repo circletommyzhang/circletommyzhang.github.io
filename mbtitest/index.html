@@ -504,8 +504,6 @@
       const leftScore = scores[left];
       const rightScore = scores[right];
 
-      if (leftScore >= 3 && rightScore < 3) return left;
-      if (rightScore >= 3 && leftScore < 3) return right;
       if (leftScore > rightScore) return left;
       if (rightScore > leftScore) return right;
       return "?";
@@ -546,11 +544,14 @@
       const uncertain = type.includes("?");
       const uncertainPairs = pairs
         .filter((_, index) => letters[index] === "?")
-        .map(([left, right]) => `${left}/${right}`);
+        .map(([left, right]) => {
+          if (left === "S" && right === "N") return "N 和 S";
+          return `${left} 和 ${right}`;
+        });
 
       modalType.textContent = type;
       modalCopy.textContent = uncertain
-        ? `结果暂不明确：${uncertainPairs.join("、")} 维度选择数量一样，建议回看这些选项后再提交。`
+        ? `你在 ${uncertainPairs.join("、")} 维度上结果数据打平了，需要重新答题。`
         : "";
       modalCopy.hidden = !uncertain;
       modalCopy.classList.toggle("warning", uncertain);
