@@ -191,18 +191,21 @@
     }
 
     .modal-card {
-      width: min(420px, 100%);
+      width: min(560px, 100%);
+      max-height: calc(100vh - 40px);
+      overflow: auto;
       padding: 30px;
       background: #ffffff;
       border: 1px solid #111111;
       box-shadow: 0 24px 60px rgba(0, 0, 0, 0.24);
-      text-align: center;
+      text-align: left;
     }
 
     .modal-label {
       margin: 0;
       color: var(--muted);
       font-size: 0.95rem;
+      text-align: center;
     }
 
     .modal-type {
@@ -211,12 +214,32 @@
       line-height: 0.9;
       font-weight: 800;
       letter-spacing: 0;
+      text-align: center;
     }
 
     .modal-copy {
       margin: 0 0 22px;
       color: var(--muted);
       line-height: 1.7;
+      text-align: center;
+    }
+
+    .advice {
+      display: grid;
+      gap: 14px;
+      margin: 20px 0 24px;
+    }
+
+    .advice-section h3 {
+      margin: 0 0 6px;
+      font-size: 1rem;
+      line-height: 1.35;
+    }
+
+    .advice-section p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.75;
     }
 
     @media (max-width: 820px) {
@@ -265,6 +288,7 @@
       <p class="modal-label" id="modalTitle">你的测试结果</p>
       <div class="modal-type" id="modalType">----</div>
       <p class="modal-copy" id="modalCopy">最后你是 ----。</p>
+      <div class="advice" id="resultAdvice"></div>
       <button class="button" type="button" id="closeModalButton">知道了</button>
     </div>
   </div>
@@ -313,6 +337,89 @@
       { letter: "P", text: "工作中喜欢不断探索新项目和新任务，在尝试多样化的工作时感到更有动力和热情，而不是一成不变的工作。" }
     ];
 
+    const resultAdvice = {
+      ISTJ: {
+        strengths: "你做事稳、细、可靠，适合做候选人信息核实、流程跟进、背景判断和长期人才库维护。你不容易被情绪带偏，也能发现简历和沟通中的细节问题。",
+        cautions: "你需要特别注意，不要过早用经验判断人。候选人的动机、潜力和真实顾虑，有时不在表面信息里。如果只看履历和规则，可能会错过真正值得挖的人。",
+        training: "你可能需要训练开放式提问和影响力表达。沟通时先听完整，再下判断；推荐前除了写清事实，也要写清候选人的痛点、机会吸引点和长期可能性。"
+      },
+      ISFJ: {
+        strengths: "你有耐心、责任感强，容易让候选人感到被尊重。做猎头时，你适合做深度跟进、候选人维护、入职前后关怀和细节型交付。",
+        cautions: "你需要特别注意，不要为了照顾对方感受而回避关键问题。薪资、离职原因、家庭阻力、竞业风险这些问题如果不早问，后面会变成更大的风险。",
+        training: "你可能需要训练边界感和关键问题追问。关心候选人是优势，但每次沟通都要把事实问透，把风险写明，不要只做让人舒服的沟通。"
+      },
+      INFJ: {
+        strengths: "你擅长理解人的深层动机，也能看到一个选择对候选人长期发展的影响。做猎头时，你适合做职业决策咨询、复杂候选人沟通和高信任关系维护。",
+        cautions: "你需要特别注意，不要过度替候选人解释或承担。你看到的可能性未必就是对方会采取的行动，候选人的真实意愿仍然需要事实验证。",
+        training: "你可能需要训练把洞察落到具体证据上。每次判断一个人，都要问：他说过什么、做过什么、放弃过什么、真正愿意承担什么成本。"
+      },
+      INTJ: {
+        strengths: "你擅长看结构、看趋势、看关键变量。做猎头时，你适合做行业研究、客户判断、岗位画像拆解和高端人才策略分析。",
+        cautions: "你需要特别注意，不要因为判断太快而忽略人的感受。候选人不是只按逻辑行动，客户也不是只按最优解决策，关系和情绪会影响结果。",
+        training: "你可能需要训练欣赏式沟通。保留你的判断力，但表达时先让对方感到被理解，再指出问题；否则你的建议正确，也可能让人不愿意接受。"
+      },
+      ISTP: {
+        strengths: "你冷静、务实，擅长从复杂信息里抓关键问题。做猎头时，你适合做简历筛选、能力判断、薪资结构分析和具体问题拆解。",
+        cautions: "你需要特别注意，不要过于低估关系经营。猎头不是只判断对错，还要让候选人愿意继续聊、愿意信任你、愿意在关键时刻告诉你真实想法。",
+        training: "你可能需要训练主动沟通和持续跟进。不要等问题出现才处理，重要候选人要定期维护，关键节点要提前确认动机、顾虑和风险。"
+      },
+      ISFP: {
+        strengths: "你敏感、细腻，能感知候选人的真实状态，也不容易用强势方式压迫别人。做猎头时，你适合做一对一深聊、候选人关系维护和体验型服务。",
+        cautions: "你需要特别注意，不要因为怕打扰、怕冲突而不推进。猎头工作需要在合适的时候追问、确认和推动，否则机会会被拖散。",
+        training: "你可能需要训练表达自己的判断。你看见的问题要说出来，尤其是候选人的犹豫、客户的风险、offer 的不确定性，不要只放在心里。"
+      },
+      INFP: {
+        strengths: "你重视人的价值和长期发展，容易从候选人的故事里看见真正的动机。做猎头时，你适合做职业选择沟通、内容表达和深度候选人经营。",
+        cautions: "你需要特别注意，不要把理想化代入工作。候选人是否合适，不能只看价值观和潜力，还要看岗位要求、业务阶段、薪资边界和行动意愿。",
+        training: "你可能需要训练现实校验。每次推荐前，把你的感觉翻译成事实：能力证据是什么？痛点是什么？风险是什么？客户为什么应该见他？"
+      },
+      INTP: {
+        strengths: "你擅长分析原理和建立模型，适合做行业逻辑、岗位能力模型、人才地图和复杂问题拆解。你能看到别人忽略的底层结构。",
+        cautions: "你需要特别注意，不要只停留在分析里。猎头工作的结果来自行动：联系、提问、推进、谈判、复盘。想清楚很重要，但不能替代执行。",
+        training: "你可能需要训练简洁表达和行动节奏。和候选人沟通时少讲完整理论，多给清晰判断；每天固定推进关键人选，不要无限优化方案。"
+      },
+      ESTP: {
+        strengths: "你反应快、敢行动，擅长现场判断和快速推进。做猎头时，你适合做 BD、陌生候选人切入、谈判推进和突发问题处理。",
+        cautions: "你需要特别注意，不要只靠临场发挥。猎头的很多风险来自前期没问透：动机、薪资、家庭、竞业、客户顾虑，如果漏掉，后面会很被动。",
+        training: "你可能需要训练记录和复盘。每次沟通后写下事实、判断和下一步动作；不要只凭感觉推进，关键节点必须留痕和确认。"
+      },
+      ESFP: {
+        strengths: "你亲和、热情，容易让候选人愿意聊，也擅长活跃关系。做猎头时，你适合做候选人初步沟通、关系破冰、转介绍和机会介绍。",
+        cautions: "你需要特别注意，不要为了气氛好而回避深问题。候选人开心不代表会行动，关系热络不代表岗位匹配，最后还是要回到事实和痛点。",
+        training: "你可能需要训练深度提问。每次沟通都要问出真实动机、当前不满、决策标准和底线条件，让热情变成推动结果的能力。"
+      },
+      ENFP: {
+        strengths: "你擅长和人建立连接，容易让候选人放下防备，也能看到一个人未来的可能性。做猎头时，你适合做候选人沟通、机会激发、转介绍和关系维护。",
+        cautions: "你需要特别注意，不要只共情候选人。猎头不能因为喜欢一个人、理解一个人，就忽略岗位匹配、客户要求、薪资边界和离职风险。",
+        training: "你可能需要训练结构化提问和事实核查。每次推荐前问自己三件事：他为什么匹配？他的真实痛点是什么？客户见他可能会担心什么？"
+      },
+      ENTP: {
+        strengths: "你脑子快、点子多，擅长打开局面和找到新路径。做猎头时，你适合做新客户开拓、复杂岗位破局、人才地图创新和谈判策略设计。",
+        cautions: "你需要特别注意，不要因为喜欢新机会就频繁换方向。猎头真正出业绩，靠的不只是聪明和创意，还靠持续跟进和把一个单子做到底。",
+        training: "你可能需要训练收尾能力。每个项目都要明确目标公司、目标人选、推进节奏和复盘标准，少开新坑，多完成关键闭环。"
+      },
+      ESTJ: {
+        strengths: "你目标感强、执行力好，擅长管理流程和推动结果。做猎头时，你适合做项目管理、客户交付、节点推进和团队执行标准建设。",
+        cautions: "你需要特别注意，不要把人当流程管理。候选人的犹豫、客户的反复、offer 的变化，很多不是靠命令解决，而是靠理解真实原因。",
+        training: "你可能需要训练倾听和弹性沟通。推进之前先问清对方为什么卡住，再给方案；不要只催进度，要解决阻力。"
+      },
+      ESFJ: {
+        strengths: "你重视关系和服务体验，擅长让候选人和客户感到被照顾。做猎头时，你适合做候选人维护、客户服务、流程协调和入职跟进。",
+        cautions: "你需要特别注意，不要为了维持和谐而不说难听的话。候选人不匹配、客户要求不合理、offer 有风险时，你必须及时指出来。",
+        training: "你可能需要训练客观判断和拒绝能力。关系要维护，但标准不能降低；每次推荐都要用事实证明，而不是只凭对人的好感。"
+      },
+      ENFJ: {
+        strengths: "你擅长影响人、组织共识，也能把机会讲得有方向感。做猎头时，你适合做高意愿候选人推动、客户沟通、offer 谈判和团队带教。",
+        cautions: "你需要特别注意，不要过度替别人规划。候选人是否行动，要看他的真实痛点和成本承受力，不是你觉得这个机会对他好就够了。",
+        training: "你可能需要训练事实边界。影响别人之前，先确认事实、风险和底线；你的表达力很强，更要确保每一句建议都有依据。"
+      },
+      ENTJ: {
+        strengths: "你有战略感和推进力，适合做大客户开发、复杂项目统筹、关键岗位攻坚和团队目标管理。你能把混乱问题快速拆成可执行动作。",
+        cautions: "你需要特别注意，不要只追求效率和结果。猎头面对的是人，候选人的信任、客户的犹豫和团队的状态，都不是单靠强推动解决的。",
+        training: "你可能需要训练耐心和人情味。关键沟通前先听对方的顾虑，再给判断；强势可以推动进度，但理解才能降低风险。"
+      }
+    };
+
     const pairs = [["E", "I"], ["S", "N"], ["T", "F"], ["J", "P"]];
     const form = document.querySelector("#quizForm");
     const checkedCount = document.querySelector("#checkedCount");
@@ -321,6 +428,7 @@
     const resultModal = document.querySelector("#resultModal");
     const modalType = document.querySelector("#modalType");
     const modalCopy = document.querySelector("#modalCopy");
+    const resultAdviceEl = document.querySelector("#resultAdvice");
     const closeModalButton = document.querySelector("#closeModalButton");
 
     let currentQuestions = [];
@@ -378,6 +486,30 @@
       checkedCount.textContent = String(form.querySelectorAll("input:checked").length);
     }
 
+    function renderAdvice(type) {
+      const advice = resultAdvice[type];
+      resultAdviceEl.innerHTML = "";
+      if (!advice) return;
+
+      [
+        ["你的优势：", advice.strengths],
+        ["你需要特别注意：", advice.cautions],
+        ["你可能需要训练：", advice.training]
+      ].forEach(([title, text]) => {
+        const section = document.createElement("section");
+        section.className = "advice-section";
+
+        const heading = document.createElement("h3");
+        heading.textContent = title;
+
+        const paragraph = document.createElement("p");
+        paragraph.textContent = text;
+
+        section.append(heading, paragraph);
+        resultAdviceEl.append(section);
+      });
+    }
+
     function showResult() {
       const scores = countScores();
       const type = pairs.map(([left, right]) => chooseLetter(scores, left, right)).join("");
@@ -386,8 +518,12 @@
       modalType.textContent = type;
       modalCopy.textContent = uncertain
         ? "结果暂不明确，建议回看选项后再提交。"
-        : `最后你是 ${type}。`;
+        : `你是 ${type}。`;
       modalCopy.classList.toggle("warning", uncertain);
+      resultAdviceEl.innerHTML = "";
+      if (!uncertain) {
+        renderAdvice(type);
+      }
       resultModal.hidden = false;
     }
 
@@ -396,6 +532,7 @@
       renderQuestions();
       resultModal.hidden = true;
       modalCopy.classList.remove("warning");
+      resultAdviceEl.innerHTML = "";
     }
 
     form.addEventListener("change", updateCheckedCount);
