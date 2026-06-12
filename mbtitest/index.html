@@ -315,8 +315,8 @@
       <div class="modal-footer">
         <button class="button" type="button" id="closeModalButton">知道了</button>
         <p class="learn-more">
-          想学习更多猎头干货请点击：公众号：
-          <a href="https://circle.feishu.cn/wiki/XJ6Xw6SXKiiojpkKhdecf43Ynzg" target="_blank" rel="noopener">《猎头张振》的干货目录</a>
+          想学习更多猎头干货请点击：
+          <a href="https://circle.feishu.cn/wiki/XJ6Xw6SXKiiojpkKhdecf43Ynzg" target="_blank" rel="noopener">公众号：《猎头张振》的干货目录</a>
         </p>
       </div>
     </div>
@@ -541,11 +541,17 @@
 
     function showResult() {
       const scores = countScores();
-      const type = pairs.map(([left, right]) => chooseLetter(scores, left, right)).join("");
+      const letters = pairs.map(([left, right]) => chooseLetter(scores, left, right));
+      const type = letters.join("");
       const uncertain = type.includes("?");
+      const uncertainPairs = pairs
+        .filter((_, index) => letters[index] === "?")
+        .map(([left, right]) => `${left}/${right}`);
 
       modalType.textContent = type;
-      modalCopy.textContent = uncertain ? "结果暂不明确，建议回看选项后再提交。" : "";
+      modalCopy.textContent = uncertain
+        ? `结果暂不明确：${uncertainPairs.join("、")} 维度选择数量一样，建议回看这些选项后再提交。`
+        : "";
       modalCopy.hidden = !uncertain;
       modalCopy.classList.toggle("warning", uncertain);
       resultAdviceEl.innerHTML = "";
