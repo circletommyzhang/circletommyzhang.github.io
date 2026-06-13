@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>性格测试</title>
+  <title>猎头版MBTI测试</title>
   <style>
     :root {
       color-scheme: light;
@@ -75,6 +75,29 @@
       color: var(--muted);
       font-size: clamp(1rem, 1.8vw, 1.18rem);
       line-height: 1.75;
+    }
+
+    .lead {
+      max-width: 680px;
+      margin: 18px 0 0;
+      color: var(--ink);
+      font-size: clamp(1.05rem, 1.9vw, 1.28rem);
+      line-height: 1.55;
+      font-weight: 700;
+    }
+
+    .subtitle strong {
+      color: var(--ink);
+      font-weight: 800;
+    }
+
+    .subtitle ol {
+      margin: 8px 0 0;
+      padding-left: 1.35em;
+    }
+
+    .subtitle li + li {
+      margin-top: 6px;
     }
 
     .quiz-panel {
@@ -285,10 +308,15 @@
   <main class="shell">
     <section class="hero" aria-labelledby="page-title">
       <div class="intro">
-        <h1 id="page-title">性格测试</h1>
-        <p class="subtitle">
-          提醒：请选择你内心本来的样子，而不是在某种压力下的状态。比如你本来就是不做计划的，但是在工作中有要求所以做了计划，那就是不做计划。
-        </p>
+        <h1 id="page-title">猎头版MBTI测试</h1>
+        <p class="lead">提交后会给你做猎头的建议</p>
+        <div class="subtitle">
+          <strong>提醒：</strong>
+          <ol>
+            <li>选择你内心本来的样子。比如：你是不喜欢做计划的，但是长期工作中必须做计划，你也经常做计划，那你选择时就应该选择你不做计划，你喜欢自由发挥。</li>
+            <li>模棱两可的建议不选。</li>
+          </ol>
+        </div>
       </div>
 
     </section>
