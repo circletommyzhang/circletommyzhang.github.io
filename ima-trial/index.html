@@ -176,6 +176,18 @@
       align-items: center;
     }
 
+    .form-embed {
+      width: 100%;
+      height: min(860px, 84vh);
+      min-height: 640px;
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .embed-panel {
+      margin-top: 18px;
+    }
+
     .status {
       display: none;
       margin: 0;
@@ -300,6 +312,11 @@
         grid-template-columns: 1fr;
       }
 
+      .form-embed {
+        height: 780px;
+        min-height: 580px;
+      }
+
       .qr-image-wrap {
         min-height: 220px;
       }
@@ -346,13 +363,24 @@
       <div class="panel">
         <h2>试用填写</h2>
         <div class="form">
-          <p class="hint">请在飞书报名表填写微信名和微信号。提交后请扫码申请加入智能体，并添加张振微信 85963906。</p>
+          <p class="hint">下面可以直接填写微信名和微信号。提交后请扫码申请加入智能体，并添加张振微信 85963906。</p>
           <div class="button-row">
-            <a class="button" href="https://circle.feishu.cn/wiki/APbpwOq8EitWl0kiQd7cYMIKnqb?table=tblEptS2ZMpKD5u7&view=vewnbDvsNx" target="_blank" rel="noopener">打开飞书报名表</a>
+            <a class="button secondary" href="https://circle.feishu.cn/share/base/form/shrcn1ZLzqFUmqTJKZ4jwYYq25e" target="_blank" rel="noopener">打不开时点这里</a>
           </div>
           <p class="hint">后台记录会进入飞书多维表「智能体试用」，按提交顺序处理。</p>
         </div>
       </div>
+    </section>
+
+    <section class="panel embed-panel" aria-labelledby="formEmbedTitle">
+      <h2 id="formEmbedTitle">在线填写</h2>
+      <iframe
+        class="form-embed"
+        src="https://circle.feishu.cn/share/base/form/shrcn1ZLzqFUmqTJKZ4jwYYq25e"
+        title="张振的猎头智能体免费试用报名表"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
     </section>
 
     <section class="panel" style="margin-top: 18px;">
