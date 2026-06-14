@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>张振猎头智能体试用</title>
+  <meta name="description" content="每天限 10 个名额，提交微信名和微信号后试用张振猎头智能体。">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f5f5f5;
+      --panel: #ffffff;
+      --ink: #111111;
+      --muted: #666666;
+      --line: #d8d8d8;
+      --soft: #eeeeee;
+      --shadow: 0 14px 32px rgba(0, 0, 0, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    .shell {
+      width: min(1080px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 32px 0 48px;
+    }
+
+    .hero,
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .hero {
+      padding: clamp(26px, 5vw, 48px);
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 4rem);
+      line-height: 1.06;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      max-width: 760px;
+      margin: 18px auto 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      line-height: 1.8;
+    }
+
+    .main-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.92fr) minmax(320px, 1.08fr);
+      gap: 18px;
+      margin-top: 18px;
+      align-items: start;
+    }
+
+    .panel {
+      padding: clamp(20px, 3vw, 28px);
+    }
+
+    h2 {
+      margin: 0 0 16px;
+      font-size: 1.35rem;
+      line-height: 1.35;
+    }
+
+    .rules {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .rules li {
+      display: grid;
+      grid-template-columns: 28px minmax(0, 1fr);
+      gap: 10px;
+      align-items: start;
+    }
+
+    .rule-number {
+      display: grid;
+      place-items: center;
+      width: 28px;
+      height: 28px;
+      color: #fff;
+      background: var(--ink);
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    .form {
+      display: grid;
+      gap: 14px;
+    }
+
+    .field {
+      display: grid;
+      gap: 7px;
+    }
+
+    .field label {
+      font-weight: 700;
+    }
+
+    .field input {
+      width: 100%;
+      min-height: 48px;
+      padding: 0 12px;
+      color: var(--ink);
+      background: #fff;
+      border: 1px solid var(--line);
+      outline: none;
+    }
+
+    .field input:focus {
+      border-color: var(--ink);
+      box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08);
+    }
+
+    .hint {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.65;
+    }
+
+    .button {
+      display: inline-grid;
+      place-items: center;
+      min-height: 48px;
+      padding: 0 18px;
+      color: #fff;
+      background: var(--ink);
+      border: 1px solid var(--ink);
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .button.secondary {
+      color: var(--ink);
+      background: #fff;
+      border-color: var(--line);
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .status {
+      display: none;
+      margin: 0;
+      padding: 12px;
+      color: var(--ink);
+      background: var(--soft);
+      line-height: 1.65;
+    }
+
+    .status.show {
+      display: block;
+    }
+
+    .qr-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .qr-card {
+      display: grid;
+      gap: 12px;
+      align-content: start;
+      padding: 16px;
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .qr-title {
+      margin: 0;
+      font-weight: 800;
+      line-height: 1.35;
+    }
+
+    .qr-copy {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+    .qr-image-wrap {
+      display: grid;
+      place-items: center;
+      min-height: 240px;
+      background: #fafafa;
+      border: 1px solid var(--line);
+      overflow: hidden;
+    }
+
+    .qr-image {
+      display: block;
+      width: 100%;
+      max-width: 260px;
+      height: auto;
+    }
+
+    .qr-image.wide {
+      max-width: 100%;
+    }
+
+    .admin {
+      margin-top: 18px;
+    }
+
+    .admin-head {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+    }
+
+    table {
+      width: 100%;
+      min-width: 760px;
+      border-collapse: collapse;
+      background: #fff;
+    }
+
+    th,
+    td {
+      padding: 12px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+      white-space: nowrap;
+    }
+
+    th {
+      background: #f1f1f1;
+      font-size: 0.9rem;
+    }
+
+    .empty {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 3px 8px;
+      color: #fff;
+      background: var(--ink);
+      font-size: 0.86rem;
+    }
+
+    @media (max-width: 840px) {
+      .shell {
+        width: min(100% - 24px, 720px);
+        padding-top: 18px;
+      }
+
+      .main-grid,
+      .qr-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .qr-image-wrap {
+        min-height: 220px;
+      }
+
+      .admin-head {
+        align-items: stretch;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <section class="hero" aria-labelledby="pageTitle">
+      <h1 id="pageTitle">张振猎头智能体试用</h1>
+      <p class="lead">
+        每天限 10 个试用名额，按提交顺序开放。请填写微信名和微信号，添加张振微信 85963906 后，扫码进入智能体试用。
+      </p>
+    </section>
+
+    <section class="main-grid">
+      <div class="panel">
+        <h2>试用规则</h2>
+        <ul class="rules">
+          <li>
+            <span class="rule-number">1</span>
+            <span>每天下午 2 点按报名顺序通过 10 个试用名额。</span>
+          </li>
+          <li>
+            <span class="rule-number">2</span>
+            <span>试用截止当天晚上 8 点。8 点前加入知识星球的用户，将继续保留智能体权限。</span>
+          </li>
+          <li>
+            <span class="rule-number">3</span>
+            <span>晚上 8 点后未加入知识星球的用户，会被移出智能体。</span>
+          </li>
+          <li>
+            <span class="rule-number">4</span>
+            <span>请先添加张振微信：85963906，便于核对试用身份和后续开通。</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="panel">
+        <h2>试用填写</h2>
+        <div class="form">
+          <p class="hint">请在飞书报名表填写微信名和微信号。提交后请扫码申请加入智能体，并添加张振微信 85963906。</p>
+          <div class="button-row">
+            <a class="button" href="https://circle.feishu.cn/wiki/APbpwOq8EitWl0kiQd7cYMIKnqb?table=tblEptS2ZMpKD5u7&view=vewnbDvsNx" target="_blank" rel="noopener">打开飞书报名表</a>
+          </div>
+          <p class="hint">后台记录会进入飞书多维表「智能体试用」，按提交顺序处理。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" style="margin-top: 18px;">
+      <h2>扫码试用与正式加入</h2>
+      <div class="qr-grid">
+        <article class="qr-card">
+          <p class="qr-title">智能体试用二维码</p>
+          <p class="qr-copy">提交信息后，扫码申请加入张振猎头智能体。</p>
+          <div class="qr-image-wrap">
+            <img class="qr-image" src="assets/ima-qr.png" alt="张振猎头智能体二维码">
+          </div>
+        </article>
+        <article class="qr-card">
+          <p class="qr-title">知识星球二维码</p>
+          <p class="qr-copy">晚上 8 点前加入知识星球，可继续保留智能体权限。</p>
+          <div class="qr-image-wrap">
+            <img class="qr-image wide" src="assets/zsxq-qr.png" alt="张振的知识星球二维码">
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel admin" aria-labelledby="adminTitle">
+      <div class="admin-head">
+        <div>
+          <h2 id="adminTitle" style="margin-bottom: 6px;">管理预览</h2>
+          <p class="hint">报名数据进入飞书多维表。每天 14:00 按顺序通过前 10 人，20:00 根据知识星球加入情况更新状态。</p>
+        </div>
+        <a class="button secondary" href="https://circle.feishu.cn/wiki/APbpwOq8EitWl0kiQd7cYMIKnqb?table=tblEptS2ZMpKD5u7&view=vewpza7Fyw" target="_blank" rel="noopener">打开飞书后台</a>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>字段</th>
+              <th>用途</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>微信名 / 微信号</td>
+              <td>用户报名时填写，用于核验和联系。</td>
+            </tr>
+            <tr>
+              <td>状态</td>
+              <td>待通过、今日试用、已转正、待移除、已移除、无效。</td>
+            </tr>
+            <tr>
+              <td>提交时间 / 核验时间 / 备注</td>
+              <td>用于记录处理节点和特殊情况。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
