@@ -60,7 +60,7 @@
       
       <div class="profile-block text-center">
         <a id="avatar" href="https://www.hrquanzi.com" target="_blank">
-          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200" decoding="async">
         </a>
         <h2 id="name" class="hidden-xs hidden-sm">猎头张振</h2>
         <h3 id="title" class="hidden-xs hidden-sm hidden-md">Executive Search for Internet &amp; Intelligent Driving</h3>
@@ -424,7 +424,7 @@
     <figure class="media">
       <div class="media-left">
         <a href="https://www.hrquanzi.com" target="_blank" class="img-burn thumb-sm visible-lg">
-          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="" decoding="async" loading="lazy" width="400" height="400">
         </a>
       </div>
       <div class="media-body">
@@ -502,14 +502,14 @@
           <div class="tab-content">
             <div role="tabpanel" class="tab-pane fade active in" id="alipay">
               <div class="donate-payimg">
-                <img src="/images/donate/alipay.jpg" alt="扫码支持" title="扫一扫" />
+                <img src="/images/donate/alipay.jpg" alt="扫码支持" title="扫一扫" / decoding="async" loading="lazy" width="600" height="600">
               </div>
               <p class="text-muted mv">扫码打赏，你说多少就多少</p>
               <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
             </div>
             <div role="tabpanel" class="tab-pane fade" id="wechatpay">
               <div class="donate-payimg">
-                <img src="/images/donate/wechat.jpg" alt="扫码支持" title="扫一扫" />
+                <img src="/images/donate/wechat.jpg" alt="扫码支持" title="扫一扫" / decoding="async" loading="lazy" width="500" height="500">
               </div>
               <p class="text-muted mv">扫码打赏，你说多少就多少</p>
               <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
@@ -559,10 +559,7 @@
         </div>
     </div>
 </footer>
-  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
-<script>
-window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
-</script>
+  <script src="/js/jquery.min.js"></script>
 
 <script src="/js/plugin.min.js"></script>
 
@@ -595,7 +592,16 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
    
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script>
+window.addEventListener('load', function () {
+  window.setTimeout(function () {
+    var s = document.createElement('script');
+    s.src = '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js';
+    s.async = true;
+    document.body.appendChild(s);
+  }, 1200);
+});
+</script>
 
 
 
