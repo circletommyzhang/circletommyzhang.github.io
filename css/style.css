@@ -9226,7 +9226,7 @@ body.okayNav-loaded {
 }
 
 .home-intro {
-  min-height: calc(100vh - 60px);
+  min-height: auto;
   display: grid;
   grid-template-columns: minmax(280px, 44%) minmax(320px, 1fr);
   column-gap: 52px;
@@ -9291,55 +9291,39 @@ body.okayNav-loaded {
   align-items: center;
   justify-content: flex-start;
   margin-top: auto;
-  padding-top: 22px;
-  border-top: 1px solid #dedede;
-  background: transparent;
+  padding: 22px 28px;
+  border-top: 1px solid rgba(255, 255, 255, .22);
+  background: #073f35;
 }
 
 .home-contact-links {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 28px;
 }
 
 .home-contact-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 52px;
-  height: 52px;
+  width: 40px;
+  height: 40px;
   padding: 0;
   border: 0;
   border-radius: 4px;
   color: #fff;
   font: inherit;
-  font-size: 28px;
+  background: transparent;
+  font-size: 27px;
   line-height: 1;
   cursor: pointer;
-  transition: filter .2s ease, box-shadow .2s ease;
-}
-
-.home-contact-wechat {
-  background: #07c160;
-}
-
-.home-contact-maimai {
-  background: #3478f6;
-}
-
-.home-contact-linkedin {
-  background: #0a66c2;
-}
-
-.home-contact-email {
-  background: #087f6b;
+  transition: background-color .2s ease, color .2s ease;
 }
 
 .home-contact-icon:hover,
 .home-contact-icon:focus-visible {
   color: #fff;
-  filter: brightness(.92);
-  box-shadow: 0 0 0 3px rgba(7, 63, 53, .14);
+  background: rgba(255, 255, 255, .12);
   text-decoration: none;
   outline: none;
 }
@@ -9448,6 +9432,7 @@ body.wechat-dialog-open {
 
   .home-contact-strip {
     margin-top: 4px;
+    padding: 18px 20px;
   }
 }
 
@@ -9458,16 +9443,16 @@ body.wechat-dialog-open {
   }
 
   .home-contact-strip {
-    padding-top: 20px;
+    padding: 18px 20px;
   }
 
   .home-contact-icon {
-    width: 48px;
-    height: 48px;
-    font-size: 26px;
+    width: 38px;
+    height: 38px;
+    font-size: 25px;
   }
 
   .home-contact-links {
-    gap: 16px;
+    gap: 22px;
   }
 }
