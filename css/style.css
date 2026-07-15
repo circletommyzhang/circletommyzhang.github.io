@@ -9241,7 +9241,8 @@ body.okayNav-loaded {
 
 .home-intro-photo {
   grid-area: photo;
-  min-height: 620px;
+  aspect-ratio: 4 / 5;
+  min-height: 0;
   overflow: hidden;
 }
 
@@ -9459,8 +9460,9 @@ body.wechat-dialog-open {
   }
 
   .home-intro-photo {
-    height: min(68vh, 680px);
-    min-height: 460px;
+    aspect-ratio: auto;
+    height: min(58vh, 600px);
+    min-height: 440px;
   }
 
   .home-intro-identity {
@@ -9488,7 +9490,7 @@ body.wechat-dialog-open {
 
 @media (max-width: 520px) {
   .home-intro-photo {
-    height: 62vh;
+    height: 56vh;
     min-height: 400px;
   }
 
