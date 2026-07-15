@@ -9235,6 +9235,9 @@ body.okayNav-loaded {
 }
 
 .home-intro-photo {
+  align-self: start;
+  width: 100%;
+  min-width: 0;
   aspect-ratio: 4 / 5;
   min-height: 0;
   overflow: hidden;
@@ -9432,6 +9435,7 @@ body.wechat-dialog-open {
   }
 
   .home-intro-photo {
+    align-self: stretch;
     aspect-ratio: auto;
     height: min(58vh, 600px);
     min-height: 440px;
