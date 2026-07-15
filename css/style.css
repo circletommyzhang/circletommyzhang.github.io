@@ -9293,13 +9293,13 @@ body.okayNav-loaded {
   margin-top: auto;
   padding: 22px 28px;
   border-top: 1px solid rgba(255, 255, 255, .22);
-  background: #073f35;
+  background: #173f78;
 }
 
 .home-contact-links {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 42px;
 }
 
 .home-contact-icon {
@@ -9453,6 +9453,6 @@ body.wechat-dialog-open {
   }
 
   .home-contact-links {
-    gap: 22px;
+    gap: 28px;
   }
 }
