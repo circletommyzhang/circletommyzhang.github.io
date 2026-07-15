@@ -9229,18 +9229,12 @@ body.okayNav-loaded {
   min-height: calc(100vh - 60px);
   display: grid;
   grid-template-columns: minmax(280px, 44%) minmax(320px, 1fr);
-  grid-template-areas:
-    "photo copy"
-    "identity contact";
-  grid-template-rows: minmax(0, auto) auto;
   column-gap: 52px;
-  row-gap: 0;
   align-items: stretch;
   padding: 32px 0 48px;
 }
 
 .home-intro-photo {
-  grid-area: photo;
   aspect-ratio: 4 / 5;
   min-height: 0;
   overflow: hidden;
@@ -9256,10 +9250,10 @@ body.okayNav-loaded {
 }
 
 .home-intro-copy {
-  grid-area: copy;
-  align-self: start;
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
   max-width: 720px;
-  padding-bottom: 28px;
 }
 
 .home-intro-copy p {
@@ -9268,57 +9262,41 @@ body.okayNav-loaded {
   line-height: 1.9;
 }
 
+.home-intro-copy > p:last-of-type {
+  margin-bottom: 0;
+}
+
 .home-intro-lead {
   color: #26332f;
   font-size: 20px !important;
   line-height: 1.75 !important;
 }
 
-.home-intro-identity {
-  grid-area: identity;
-  padding-top: 24px;
-  border-top: 1px solid #dedede;
-}
-
-.home-intro-kicker {
-  margin: 0 0 8px;
-  color: #777;
-  font-size: 15px;
-  line-height: 1.6;
-}
-
-.home-intro h1 {
-  margin: 0;
-  font-size: 46px;
+.home-intro-name {
+  color: #1f2926;
+  font-size: 1.18em;
   font-weight: 700;
-  line-height: 1.18;
-  letter-spacing: 0;
+}
+
+.home-intro-copy strong {
+  color: #1f2926;
+  font-weight: 700;
 }
 
 .home-contact-strip {
-  grid-area: contact;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 22px;
-  min-height: 108px;
-  padding-top: 24px;
+  margin-top: auto;
+  padding-top: 22px;
   border-top: 1px solid #dedede;
   background: transparent;
-}
-
-.home-contact-label {
-  color: #26332f;
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: 0;
-  white-space: nowrap;
 }
 
 .home-contact-links {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 20px;
 }
 
 .home-contact-icon {
@@ -9448,12 +9426,6 @@ body.wechat-dialog-open {
 @media (max-width: 991px) {
   .home-intro {
     grid-template-columns: 1fr;
-    grid-template-areas:
-      "photo"
-      "identity"
-      "copy"
-      "contact";
-    grid-template-rows: auto;
     gap: 0;
     min-height: auto;
     padding: 28px 0;
@@ -9463,20 +9435,11 @@ body.wechat-dialog-open {
     aspect-ratio: auto;
     height: min(58vh, 600px);
     min-height: 440px;
-  }
-
-  .home-intro-identity {
-    padding: 22px 0 28px;
-    border-top: 0;
-  }
-
-  .home-intro h1 {
-    font-size: 36px;
+    margin-bottom: 28px;
   }
 
   .home-intro-copy {
     max-width: none;
-    padding-bottom: 22px;
   }
 
   .home-intro-lead {
@@ -9484,7 +9447,7 @@ body.wechat-dialog-open {
   }
 
   .home-contact-strip {
-    min-height: 96px;
+    margin-top: 4px;
   }
 }
 
@@ -9495,10 +9458,6 @@ body.wechat-dialog-open {
   }
 
   .home-contact-strip {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 12px;
-    min-height: auto;
     padding-top: 20px;
   }
 
@@ -9509,6 +9468,6 @@ body.wechat-dialog-open {
   }
 
   .home-contact-links {
-    gap: 8px;
+    gap: 16px;
   }
 }
