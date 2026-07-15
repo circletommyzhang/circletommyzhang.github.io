@@ -9271,8 +9271,8 @@ body.okayNav-loaded {
 
 .home-intro-lead {
   color: #26332f;
-  font-size: 20px !important;
-  line-height: 1.75 !important;
+  font-size: 17px !important;
+  line-height: 1.9 !important;
 }
 
 .home-intro-name {
@@ -9444,10 +9444,6 @@ body.wechat-dialog-open {
 
   .home-intro-copy {
     max-width: none;
-  }
-
-  .home-intro-lead {
-    font-size: 19px !important;
   }
 
   .home-contact-strip {
