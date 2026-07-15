@@ -327,19 +327,32 @@ window.addEventListener('load', function () {
   function openDialog() {
     dialog.hidden = false;
     overlay.hidden = false;
+    dialog.classList.add('is-open');
+    overlay.classList.add('is-open');
     trigger.setAttribute('aria-expanded', 'true');
     document.body.classList.add('wechat-dialog-open');
     closeButton.focus();
   }
 
-  function closeDialog() {
+  function closeDialog(returnFocus) {
+    dialog.classList.remove('is-open');
+    overlay.classList.remove('is-open');
     dialog.hidden = true;
     overlay.hidden = true;
     trigger.setAttribute('aria-expanded', 'false');
     document.body.classList.remove('wechat-dialog-open');
-    trigger.focus();
+    document.body.style.removeProperty('overflow');
+    if (returnFocus !== false) {
+      try {
+        trigger.focus({ preventScroll: true });
+      } catch (error) {
+        trigger.focus();
+      }
+    }
   }
 
+  closeDialog(false);
+  window.addEventListener('pageshow', function () { closeDialog(false); });
   trigger.addEventListener('click', openDialog);
   closeButton.addEventListener('click', closeDialog);
   overlay.addEventListener('click', closeDialog);

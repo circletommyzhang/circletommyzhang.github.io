@@ -9291,9 +9291,8 @@ body.okayNav-loaded {
   align-items: center;
   justify-content: flex-start;
   margin-top: auto;
-  padding: 22px 28px;
-  border-top: 1px solid rgba(255, 255, 255, .22);
-  background: #173f78;
+  padding: 22px 0;
+  background: #fff;
 }
 
 .home-contact-links {
@@ -9310,22 +9309,29 @@ body.okayNav-loaded {
   height: 40px;
   padding: 0;
   border: 0;
-  border-radius: 4px;
-  color: #fff;
+  border-radius: 0;
+  color: #222;
   font: inherit;
   background: transparent;
   font-size: 27px;
   line-height: 1;
   cursor: pointer;
-  transition: background-color .2s ease, color .2s ease;
+  transition: opacity .2s ease;
 }
 
-.home-contact-icon:hover,
-.home-contact-icon:focus-visible {
-  color: #fff;
-  background: rgba(255, 255, 255, .12);
+.home-contact-icon:hover {
+  color: #222;
+  background: transparent;
+  opacity: .62;
   text-decoration: none;
-  outline: none;
+}
+
+.home-contact-icon:focus-visible {
+  color: #222;
+  background: transparent;
+  text-decoration: none;
+  outline: 2px solid #555;
+  outline-offset: 3px;
 }
 
 .home-maimai-mark {
@@ -9341,10 +9347,13 @@ body.okayNav-loaded {
 
 .home-wechat-overlay[hidden],
 .home-wechat-dialog[hidden] {
-  display: none;
+  display: none !important;
+  pointer-events: none !important;
 }
 
 .home-wechat-overlay {
+  display: none;
+  pointer-events: none;
   position: fixed;
   inset: 0;
   z-index: 9997;
@@ -9352,6 +9361,8 @@ body.okayNav-loaded {
 }
 
 .home-wechat-dialog {
+  display: none;
+  pointer-events: none;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -9365,6 +9376,13 @@ body.okayNav-loaded {
   background: #fff;
   box-shadow: 0 20px 60px rgba(0, 0, 0, .28);
   text-align: center;
+}
+
+
+.home-wechat-overlay.is-open,
+.home-wechat-dialog.is-open {
+  display: block;
+  pointer-events: auto;
 }
 
 .home-wechat-dialog h2 {
@@ -9432,7 +9450,7 @@ body.wechat-dialog-open {
 
   .home-contact-strip {
     margin-top: 4px;
-    padding: 18px 20px;
+    padding: 18px 0;
   }
 }
 
@@ -9443,7 +9461,7 @@ body.wechat-dialog-open {
   }
 
   .home-contact-strip {
-    padding: 18px 20px;
+    padding: 18px 0;
   }
 
   .home-contact-icon {
