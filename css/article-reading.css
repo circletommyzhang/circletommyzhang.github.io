@@ -1,0 +1,10 @@
+.article-reading .article-entry.marked-body { font-family: "Segoe UI", "Segoe UI Web (West European)", -apple-system, system-ui, Roboto, "Helvetica Neue", sans-serif; font-size: 16px; line-height: 1.6; color: #242424; letter-spacing: normal; overflow-wrap: anywhere; }
+.article-reading .article-title { font-family: "Segoe UI", "Segoe UI Web (West European)", -apple-system, system-ui, Roboto, "Helvetica Neue", sans-serif; font-size: 32px; line-height: 40px; font-weight: 600; color: #242424; margin: 24px 0; padding-bottom: 9.6px; border-bottom: 1px solid #e0e0e0; }
+.article-reading .article-entry.marked-body p { margin: 12px 0 20px; line-height: inherit; }
+.article-reading .article-entry.marked-body h2 { font-family: inherit; font-size: 24px; line-height: 32px; font-weight: 600; margin: 32px 0 16px; padding: 0; color: #242424; border: 0; }
+.article-reading .article-entry.marked-body h3 { font-family: inherit; font-size: 18px; line-height: 26px; font-weight: 600; margin: 24px 0 8px; padding: 0; color: #242424; border: 0; }
+.article-reading .article-entry.marked-body strong { font-weight: 600; }
+.article-reading .article-entry.marked-body ul { list-style-type: disc; margin: 12px 0 20px; padding-left: 28px; }
+.article-reading .article-entry.marked-body li { margin: 8px 0; line-height: inherit; }
+.article-reading .article-entry.marked-body hr { margin: 32px 0; height: 1px; border: 0; background: #e0e0e0; }
+@media (max-width: 767px) { .article-reading .article-title { font-size: 28px; line-height: 36px; } }
