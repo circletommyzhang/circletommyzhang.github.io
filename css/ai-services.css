@@ -21,3 +21,7 @@
 @media (max-width: 420px) {
   .ai-services-page .ai-services-main { padding-right: 20px; padding-left: 20px; }
 }
+
+.ai-services-document .skills-updating { margin-bottom: 40px; }
+.ai-services-document .peipao-details { font-size: 20px; font-weight: 600; }
+.ai-services-document .peipao-details a { text-decoration: underline; text-underline-offset: 4px; }
