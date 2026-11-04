@@ -14,8 +14,6 @@
     if (value !== undefined && value !== null) n.textContent = String(value);
     return n;
   }
-  function read(key) { try { return localStorage.getItem(key) || ''; } catch (_) { return ''; } }
-  function save(key, value) { try { localStorage.setItem(key, value); } catch (_) {} }
   function date(value) {
     return new Date(value).toLocaleString('zh-CN', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' });
   }
@@ -51,16 +49,7 @@
       const result = await client.auth.signInAnonymously();
       if (result.error) throw result.error;
     }
-    const name = await rpc('visitor_name'); save('hrqa-number', name); return name;
-  }
-  function nickname(input, form = input.closest('form')) {
-    input.readOnly = true; input.required = false;
-    input.value = read('hrqa-number'); input.placeholder = '填写时自动分配，例如：猎头001';
-    let ready = false;
-    form.addEventListener('focusin', async event => {
-      if (ready || event.target === input) return;
-      try { input.value = await visitor(); ready = true; } catch (_) { /* 提交时给出完整错误信息。 */ }
-    });
+    return await rpc('visitor_name');
   }
   function meta(nicknameValue, created, owner) {
     const m = node('div', 'qa-meta');
@@ -81,10 +70,6 @@
     const section = node('section', 'qa-section');
     section.append(node('h2', '', '留下评论'));
     const form = node('form', 'qa-form'); form.method = 'post';
-    const nameWrap = node('div', 'qa-short');
-    const nameLabel = node('label', '', '你的匿名编号'); nameLabel.htmlFor = 'qa-comment-name';
-    const name = node('input'); name.id = 'qa-comment-name'; name.required = true; name.maxLength = 24; name.autocomplete = 'nickname';
-    nickname(name, form); nameWrap.append(nameLabel, name);
     const bodyWrap = node('div');
     const bodyLabel = node('label', '', '评论内容'); bodyLabel.htmlFor = 'qa-comment-body';
     const body = node('textarea'); body.id = 'qa-comment-body'; body.required = true; body.maxLength = 6000; body.rows = 5;
@@ -94,8 +79,8 @@
     const feedback = node('div'); feedback.setAttribute('role', 'status'); feedback.setAttribute('aria-live', 'polite');
     const actions = node('div', 'qa-actions');
     const submit = node('button', 'qa-primary', '提交评论'); submit.type = 'submit';
-    actions.append(submit, node('span', 'qa-note', '审核后公开显示，同一浏览器沿用原编号。'));
-    form.append(nameWrap, replyContext, bodyWrap, actions, feedback); section.append(form); container.append(section);
+    actions.append(submit, node('span', 'qa-note', '评论审核后显示。'));
+    form.append(replyContext, bodyWrap, actions, feedback); section.append(form); container.append(section);
     function setReply(item) {
       parent = item.id; replyContext.replaceChildren(node('span', '', '回复 ' + item.nickname + ' '));
       replyContext.append(button('取消回复', () => { parent = null; replyContext.hidden = true; }, 'qa-reply'));
@@ -109,8 +94,8 @@
       busy(form, async () => {
         feedback.replaceChildren();
         try {
-          name.value = await visitor();
-          await rpc('submit_comment', { p_body: body.value.trim(), p_nickname: name.value.trim(),
+          const name = await visitor();
+          await rpc('submit_comment', { p_body: body.value.trim(), p_nickname: name,
             p_thread_id: context.id || null, p_article_path: context.path || null,
             p_article_title: context.title || null, p_parent_id: parent });
           body.value = ''; parent = null; replyContext.hidden = true;
@@ -174,16 +159,22 @@
       finally { more.disabled = false; }
     }
     more.addEventListener('click', load);
-    const form = $('#qa-question-form'), feedbackForm = $('#qa-question-feedback'); nickname($('[name=nickname]', form));
+    const form = $('#qa-question-form'), feedbackForm = $('#qa-question-feedback');
     form.addEventListener('submit', event => {
       event.preventDefault(); if (!form.reportValidity()) return;
+      const body = $('[name=body]', form).value.trim();
+      if (!body) { message(feedbackForm, '请填写你的问题。', true); return; }
+      const compact = body.replace(/\s+/g, ' ');
+      const beginning = compact.split(/[。？！?!]/)[0] || compact;
+      const chars = Array.from(beginning);
+      const title = chars.slice(0, 60).join('') + (chars.length > 60 ? '…' : '');
       busy(form, async () => {
         feedbackForm.replaceChildren();
         try {
-          const name = await visitor(); $('[name=nickname]', form).value = name;
-          await rpc('submit_question', { p_title: $('[name=title]', form).value.trim(), p_body: $('[name=body]', form).value.trim(), p_nickname: name });
-          $('[name=title]', form).value = ''; $('[name=body]', form).value = '';
-          message(feedbackForm, '问题已提交，审核通过后会在这里公开显示。');
+          const name = await visitor();
+          await rpc('submit_question', { p_title: title, p_body: body, p_nickname: name });
+          $('[name=body]', form).value = '';
+          message(feedbackForm, '问题已提交，等张振回答后会显示在下方“大家的问题与回答”中。');
         } catch (error) { message(feedbackForm, errorText(error), true); }
       });
     });

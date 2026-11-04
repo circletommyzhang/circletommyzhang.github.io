@@ -44,7 +44,7 @@
   
   
   
-<meta name="generator" content="Hexo 5.4.2"><link rel="stylesheet" href="/css/qa.css">
+<meta name="generator" content="Hexo 5.4.2"><link rel="stylesheet" href="/css/qa.css?v=20261105-simple">
 </head>
 
 
@@ -159,7 +159,12 @@
         </li>
         
         
-        <li class="menu-item menu-item-qa active"><a href="/qa/"><i class="icon icon-comment"></i><span class="menu-title">猎头问答</span></a></li>
+        <li class="menu-item menu-item-qa active">
+          <a href="/qa/">
+            <i class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="1em" height="1em" style="fill:currentColor;vertical-align:-0.12em" focusable="false"><path d="M4 3h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H9l-6 4v-4a2 2 0 0 1-2-2V6a3 3 0 0 1 3-3Z"/><circle cx="6.5" cy="11" r="1.3" fill="white"/><circle cx="11.5" cy="11" r="1.3" fill="white"/><circle cx="16.5" cy="11" r="1.3" fill="white"/></svg></i>
+            <span class="menu-title">猎头问答</span>
+          </a>
+        </li>
         
         
         <li class="menu-item menu-item-about">
@@ -199,13 +204,11 @@
   
 <main class="main qa-main hrqa" data-hrqa="questions" role="main">
 <div id="qa-home">
-  <header class="qa-header"><h1>猎头问答</h1><p>关于猎头工作中的具体问题，欢迎在这里提问。我会在这里回答，也欢迎大家一起交流。</p><p class="qa-muted">无需注册，系统自动分配“猎头001”这样的匿名编号。问题和评论经审核后公开。</p></header>
+  <header class="qa-header"><h1>猎头问答</h1><p>从 BD、找人、沟通、谈判、挖痛点、offer谈判、职业规划、AI、猎头管理到各种疑难杂症……</p></header>
   <section aria-labelledby="qa-ask-title"><h2 id="qa-ask-title">向张振提问</h2>
   <form id="qa-question-form" class="qa-form" method="post">
-    <div class="qa-short"><label for="qa-question-name">你的匿名编号</label><input id="qa-question-name" name="nickname" readonly placeholder="填写时自动分配，例如：猎头001"></div>
-    <div><label for="qa-question-title">问题标题</label><input id="qa-question-title" name="title" required maxlength="120" placeholder="用一句话描述你的问题"></div>
-    <div><label for="qa-question-body">具体情况</label><textarea id="qa-question-body" name="body" required maxlength="6000" rows="6" placeholder="说说你遇到的情况，以及最想解决的问题。"></textarea></div>
-    <div class="qa-actions"><button type="submit" class="qa-primary">提交问题</button><span class="qa-note">审核后公开显示，同一浏览器沿用原编号。</span></div>
+    <div><label for="qa-question-body">你的问题</label><textarea id="qa-question-body" name="body" required maxlength="6000" rows="7" placeholder="尽量写详细，可以脱敏，如果是offer谈判 你要加我微信85963906 把简历(去掉名字/手机)、你推荐的公司和岗位发给我，会更系统全面。"></textarea></div>
+    <div class="qa-actions"><button type="submit" class="qa-primary">提交问题</button><span class="qa-note">提交后，等张振回答后显示在下方“大家的问题与回答”中。</span></div>
     <div id="qa-question-feedback" role="status" aria-live="polite"></div>
   </form></section>
   <section class="qa-section" aria-labelledby="qa-public-title"><h2 id="qa-public-title">大家的问题与回答</h2><div id="qa-list-feedback" role="status" aria-live="polite">正在加载…</div><div id="qa-list"></div><button type="button" id="qa-more" hidden>加载更多问题</button></section>
@@ -296,7 +299,7 @@ window.addEventListener('load', function () {
 
 <script defer src="/js/supabase.js"></script>
 <script defer src="/js/qa-config.js"></script>
-<script defer src="/js/qa.js"></script>
+<script defer src="/js/qa.js?v=20261105-simple"></script>
 
 </body>
 </html>
