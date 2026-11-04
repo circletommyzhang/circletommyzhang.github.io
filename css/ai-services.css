@@ -1,0 +1,23 @@
+/* Reading style based on the user's OneDrive Markdown preview and reference screenshot. */
+.ai-services-page .ai-services-main { background: #fff; padding: 29px 48px 64px; }
+.ai-services-document { color: #242424; font-family: "Segoe UI", "Segoe UI Web (West European)", -apple-system, system-ui, Roboto, "Helvetica Neue", sans-serif; font-size: 16px; line-height: 1.6; letter-spacing: normal; overflow-wrap: anywhere; }
+.ai-services-document h1 { font-family: inherit; font-size: 32px; font-weight: 600; line-height: 40px; color: #242424; margin: 24px 0 24px; padding: 0 0 9.6px; border-bottom: 1px solid #e0e0e0; }
+.ai-services-document h3 { font-family: inherit; font-size: 24px; font-weight: 600; line-height: 32px; color: #242424; margin: 24px 0 16px; padding: 0; border: 0; }
+.ai-services-document h4 { font-family: inherit; font-size: 18px; font-weight: 600; line-height: 26px; color: #242424; margin: 24px 0 8px; padding: 0; border: 0; }
+.ai-services-document p { margin: 12px 0 20px; padding: 0; }
+.ai-services-document b, .ai-services-document strong { font-weight: 600; }
+.ai-services-document a { color: #0f6cbd; text-decoration: none; }
+.ai-services-document a:hover { text-decoration: underline; }
+.ai-services-document a:focus-visible { outline: 2px solid #0f6cbd; outline-offset: 3px; }
+.ai-services-document hr { height: 1px; margin: 32px 0; padding: 0; border: 0; background: #e0e0e0; }
+.ai-services-document ul { list-style: disc; margin: 12px 0 20px; padding-left: 28px; }
+.ai-services-document li { margin: 8px 0; }
+.ai-services-document figure { margin: 24px 0 32px; }
+.ai-services-document figure img { display: block; max-width: 100%; height: auto; margin: 0; border: 0; }
+@media (max-width: 767px) {
+  .ai-services-page .ai-services-main { padding: 12px 24px 48px; }
+  .ai-services-document h1 { font-size: 28px; line-height: 36px; }
+}
+@media (max-width: 420px) {
+  .ai-services-page .ai-services-main { padding-right: 20px; padding-left: 20px; }
+}
