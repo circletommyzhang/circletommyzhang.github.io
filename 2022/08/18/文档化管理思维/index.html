@@ -49,7 +49,8 @@
   
   
   
-<meta name="generator" content="Hexo 5.4.2"></head>
+<meta name="generator" content="Hexo 5.4.2"><link rel="stylesheet" href="/css/qa.css">
+</head>
 
 
 <body class="main-center" itemscope itemtype="http://schema.org/WebPage">
@@ -163,14 +164,7 @@
         </li>
         
         
-        <li class="menu-item menu-item-links">
-          <a href="/links">
-            
-            <i class="icon icon-friendship"></i>
-            
-            <span class="menu-title">我的服务</span>
-          </a>
-        </li>
+        <li class="menu-item menu-item-qa"><a href="/qa/"><i class="icon icon-comment"></i><span class="menu-title">猎头问答</span></a></li>
         
         
         <li class="menu-item menu-item-about">
@@ -442,9 +436,7 @@
   </article>
   
     
-  <section id="comments">
-  	
-  </section>
+  <section id="comments" class="hrqa qa-comments-widget" data-hrqa="article" aria-label="文章评论"></section>
 
 
   
@@ -615,6 +607,10 @@ window.addEventListener('load', function () {
 
 
 
+
+<script defer src="/js/supabase.js"></script>
+<script defer src="/js/qa-config.js"></script>
+<script defer src="/js/qa.js"></script>
 
 </body>
 </html>
