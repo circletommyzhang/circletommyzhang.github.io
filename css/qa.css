@@ -3,3 +3,33 @@
 @media(max-width:767px){.qa-main{padding:28px 20px 50px}.hrqa h1{font-size:25px}.qa-thread-title{font-size:23px!important}.hrqa h2{font-size:20px}.qa-header{margin-bottom:24px}.qa-admin-card{padding:16px}.qa-section{margin-top:26px;padding-top:24px}}
 
 #qa-question-body{min-height:240px}
+
+/* Quiet, compact community interface inspired by the supplied Manus references. */
+.hrqa{font-family:var(--ui-font);color:#262626;font-size:16px;line-height:1.75}
+.qa-main{max-width:none;padding:52px clamp(24px,4.5vw,64px) 64px}
+#qa-home,#qa-thread{max-width:920px;margin:0 auto}
+.hrqa h1{font-size:28px;font-weight:600;letter-spacing:-.5px;line-height:1.4;margin-bottom:16px}
+.hrqa h2{font-size:20px;font-weight:600}.hrqa h3{font-weight:600}
+.qa-header{margin-bottom:32px}.qa-header p{font-size:16px;line-height:1.85;color:#5b5b5b;margin:0;max-width:880px}
+.qa-form{gap:12px;margin:0}.qa-form label{font-size:15px;font-weight:500;color:#444;margin:0}
+.qa-composer{background:#fff;border:1px solid #d9d9d6;border-radius:22px;box-shadow:0 2px 8px #00000004;overflow:hidden;transition:border-color 160ms ease,box-shadow 160ms ease}
+.qa-composer:focus-within{border-color:#a5a5a1;box-shadow:0 3px 16px #00000007}
+#qa-question-body{display:block;box-sizing:border-box;height:148px;min-height:148px;max-height:148px;border:0;border-radius:0;background:transparent;padding:18px 20px 8px;resize:none;overflow-y:auto;scrollbar-width:thin;scrollbar-color:#c9c9c5 transparent;line-height:1.75;outline:0;box-shadow:none}
+#qa-question-body::placeholder{color:#999994;opacity:1}
+.qa-composer-toolbar{display:flex;justify-content:flex-end;padding:8px 14px 14px}
+.hrqa button{font-size:15px;font-weight:500;min-height:40px;border-radius:10px;transition:background-color 140ms ease,opacity 140ms ease,transform 100ms ease}
+.hrqa button.qa-primary{background:#222;border:1px solid #222;color:#fff;padding:8px 18px;min-height:40px}
+.hrqa button.qa-primary:hover:not(:disabled){background:#393939;filter:none}
+.hrqa button.qa-primary:active:not(:disabled){transform:translateY(1px)}
+.hrqa button.qa-primary:disabled{background:#ededeb;border-color:#ededeb;color:#aaa;opacity:1;cursor:default}
+.hrqa :focus-visible{outline:2px solid #888;outline-offset:3px}#qa-question-body:focus-visible{outline:0}
+.qa-note{font-size:14px;color:#8b8b86;line-height:1.6;margin:0!important}
+.qa-feedback{border-radius:10px;background:#f4f4f1;font-size:15px;color:#555}
+.qa-feedback[data-error=true]{background:#f5f2f0;color:#7d4235}
+.qa-public-list{margin-top:40px;padding-top:0;border-top:0}.qa-card{padding:24px 0}.qa-card h2{font-size:18px;line-height:1.6}
+.qa-badge{color:#555;background:#f0f0ed;border-radius:6px;font-size:12px;padding:2px 8px}
+.qa-card h2 a:hover{color:#111}.qa-meta{font-size:13px;gap:10px}.qa-excerpt{color:#666;font-size:15px;line-height:1.8}
+.qa-empty{color:#aaa;font-size:14px;padding:12px 0}.qa-admin-link{margin-top:40px;font-size:13px}
+.qa-admin-card{border-color:#e6e6e2;border-radius:16px;padding:24px}.qa-admin-bar select,.qa-form input,.qa-form textarea:not(#qa-question-body){border-radius:12px;border-color:#dededb;box-shadow:none}
+@media(max-width:767px){.qa-main{padding:32px 20px 48px}.hrqa h1{font-size:25px}.qa-header{margin-bottom:28px}.qa-header p{font-size:15px;line-height:1.85}.qa-composer{border-radius:18px}#qa-question-body{height:176px;min-height:176px;max-height:176px;padding:16px 16px 6px;font-size:16px}.qa-composer-toolbar{padding:8px 12px 12px}.qa-note{font-size:13px}.qa-public-list{margin-top:28px}}
+@media(prefers-reduced-motion:reduce){.qa-composer,.hrqa button{transition:none}.hrqa button.qa-primary:active:not(:disabled){transform:none}}

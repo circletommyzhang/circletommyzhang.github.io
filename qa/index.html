@@ -17,10 +17,10 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>猎头问答 | 猎头张振</title>
+  <title>猎头问答社区 | 猎头张振</title>
   <meta name="description" content="向猎头张振提问，阅读公开回答，参与猎头实务讨论。">
 <meta property="og:type" content="website">
-<meta property="og:title" content="猎头问答 | 猎头张振">
+<meta property="og:title" content="猎头问答社区 | 猎头张振">
 <meta property="og:url" content="https://www.hrquanzi.com/qa/">
 <meta property="og:site_name" content="猎头张振">
 <meta property="og:description" content="向猎头张振提问，阅读公开回答，参与猎头实务讨论。">
@@ -44,7 +44,8 @@
   
   
   
-<meta name="generator" content="Hexo 5.4.2"><link rel="stylesheet" href="/css/qa.css?v=20261105-simple">
+<meta name="generator" content="Hexo 5.4.2"><link rel="stylesheet" href="/css/qa.css?v=20261105-community">
+<link rel="stylesheet" href="/css/interface.css?v=20261105-community">
 </head>
 
 
@@ -162,7 +163,7 @@
         <li class="menu-item menu-item-qa active">
           <a href="/qa/">
             <i class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="1em" height="1em" style="fill:currentColor;vertical-align:-0.12em" focusable="false"><path d="M4 3h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H9l-6 4v-4a2 2 0 0 1-2-2V6a3 3 0 0 1 3-3Z"/><circle cx="6.5" cy="11" r="1.3" fill="white"/><circle cx="11.5" cy="11" r="1.3" fill="white"/><circle cx="16.5" cy="11" r="1.3" fill="white"/></svg></i>
-            <span class="menu-title">猎头问答</span>
+            <span class="menu-title">猎头问答社区</span>
           </a>
         </li>
         
@@ -204,16 +205,18 @@
   
 <main class="main qa-main hrqa" data-hrqa="questions" role="main">
 <div id="qa-home">
-  <header class="qa-header"><h1>猎头问答</h1><p>从 BD、找人、沟通、谈判、挖痛点、offer谈判、职业规划、AI、猎头管理到各种疑难杂症……</p></header>
-  <section aria-labelledby="qa-ask-title"><h2 id="qa-ask-title">向张振提问</h2>
+  <header class="qa-header"><h1>猎头问答社区</h1><p>你可以在这里提问任何猎头+AI的问题，包括：从 BD、找人、沟通、谈判、挖痛点、offer谈判、职业规划、AI、猎头管理到各种疑难杂症……</p></header>
+  <section aria-label="提问">
   <form id="qa-question-form" class="qa-form" method="post">
-    <div><label for="qa-question-body">你的问题</label><textarea id="qa-question-body" name="body" required maxlength="6000" rows="7" placeholder="尽量写详细，可以脱敏，如果是offer谈判 你要加我微信85963906 把简历(去掉名字/手机)、你推荐的公司和岗位发给我，会更系统全面。"></textarea></div>
-    <div class="qa-actions"><button type="submit" class="qa-primary">提交问题</button><span class="qa-note">提交后，等张振回答后显示在下方“大家的问题与回答”中。</span></div>
+    <label for="qa-question-body">你的问题</label>
+    <div class="qa-composer"><textarea id="qa-question-body" name="body" required maxlength="6000" rows="4" placeholder="尽量写详细，可以脱敏，如果是offer谈判 你要加我微信85963906 把简历(去掉名字/手机)、你推荐的公司和岗位发给我，会更系统全面。"></textarea>
+    <div class="qa-composer-toolbar"><button type="submit" class="qa-primary">提交问题</button></div></div>
+    <p class="qa-note">张振回答后，显示在下方</p>
     <div id="qa-question-feedback" role="status" aria-live="polite"></div>
   </form></section>
-  <section class="qa-section" aria-labelledby="qa-public-title"><h2 id="qa-public-title">大家的问题与回答</h2><div id="qa-list-feedback" role="status" aria-live="polite">正在加载…</div><div id="qa-list"></div><button type="button" id="qa-more" hidden>加载更多问题</button></section>
+  <section class="qa-section qa-public-list" aria-label="公开问答"><div id="qa-list-feedback" role="status" aria-live="polite">正在加载…</div><div id="qa-list"></div><button type="button" id="qa-more" hidden>加载更多问题</button></section>
 </div>
-<div id="qa-thread" hidden><a href="/qa/" class="qa-back">← 返回猎头问答</a><div id="qa-thread-feedback" role="status">正在加载…</div><div id="qa-thread-content"></div></div>
+<div id="qa-thread" hidden><a href="/qa/" class="qa-back">← 返回猎头问答社区</a><div id="qa-thread-feedback" role="status">正在加载…</div><div id="qa-thread-content"></div></div>
 <div class="qa-admin-link"><a href="/qa/admin/">站长管理</a></div>
 <noscript>请开启浏览器的 JavaScript，以查看问答和提交问题。</noscript>
 </main>
@@ -299,7 +302,7 @@ window.addEventListener('load', function () {
 
 <script defer src="/js/supabase.js"></script>
 <script defer src="/js/qa-config.js"></script>
-<script defer src="/js/qa.js?v=20261105-simple"></script>
+<script defer src="/js/qa.js?v=20261105-community"></script>
 
 </body>
 </html>

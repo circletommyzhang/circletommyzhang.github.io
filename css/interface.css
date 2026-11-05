@@ -1,0 +1,20 @@
+/* Shared interface rhythm; article typography is left to its reading stylesheet. */
+:root{--ui-font:-apple-system,BlinkMacSystemFont,"Segoe UI Variable Display","Segoe UI","PingFang SC","Microsoft YaHei",Helvetica,Arial,sans-serif;--ui-ink:#242424;--ui-hover:#ededeb}
+.header,.sidebar-form,.main-nav,.hrqa{font-family:var(--ui-font);-webkit-font-smoothing:antialiased}
+.header{background:#f7f7f5;border-right:1px solid #eaeae8}
+.header .profile-block{padding-bottom:16px}
+.header #name{font-weight:600;letter-spacing:-.3px}
+.header #title{font-weight:400;line-height:1.5;color:#555}
+.main-nav{padding:4px 10px!important}
+.main-nav>li>a{display:flex;align-items:center;gap:12px;min-height:44px;margin:3px 0;padding:10px 12px!important;border-radius:9px;color:#292929;font-size:15px;font-weight:400;line-height:24px;transition:background-color 140ms ease,color 140ms ease}
+.main-nav>li>a>.icon{flex:0 0 18px;width:18px;text-align:center;font-size:16px;line-height:20px;color:inherit}
+.main-nav>li .menu-title{margin-left:0;white-space:nowrap}
+.main-nav>li>a:hover,.main-nav>li>a:focus-visible{background:var(--ui-hover);color:#111}
+.main-nav>.active>a,.main-nav>.active>a:hover{background:#eaeae7;color:#151515;font-weight:500}
+.main-nav a:focus-visible{outline:2px solid #999;outline-offset:2px}
+.sidebar-form{margin:0 16px 12px}
+.sidebar-form .form-control{border-radius:9px;background:#fff;border-color:#e5e5e2;box-shadow:none;font-size:14px}
+.sidebar-form .form-control:focus{border-color:#aaa;box-shadow:0 0 0 2px #00000006}
+.sidebar-form .btn{color:#777;background:transparent}
+@media(max-width:767px){.header{background:#f7f7f5}.main-nav{padding:8px 12px!important}.main-nav>li>a{min-height:46px}.sidebar-form{margin:9px 45px 9px 0}.navbar-toggle{border-radius:8px}.navbar-toggle:hover{background:#eaeae7}}
+@media(prefers-reduced-motion:reduce){.main-nav>li>a{transition:none}}

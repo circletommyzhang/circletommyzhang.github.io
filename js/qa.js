@@ -160,6 +160,10 @@
     }
     more.addEventListener('click', load);
     const form = $('#qa-question-form'), feedbackForm = $('#qa-question-feedback');
+    const questionBody = $('[name=body]', form), questionButton = $('[type=submit]', form);
+    function syncQuestionButton() { questionButton.disabled = !questionBody.value.trim(); }
+    questionBody.addEventListener('input', syncQuestionButton);
+    syncQuestionButton();
     form.addEventListener('submit', event => {
       event.preventDefault(); if (!form.reportValidity()) return;
       const body = $('[name=body]', form).value.trim();
@@ -168,14 +172,17 @@
       const beginning = compact.split(/[。？！?!]/)[0] || compact;
       const chars = Array.from(beginning);
       const title = chars.slice(0, 60).join('') + (chars.length > 60 ? '…' : '');
+      questionButton.textContent = '提交中…'; form.setAttribute('aria-busy', 'true');
       busy(form, async () => {
         feedbackForm.replaceChildren();
         try {
           const name = await visitor();
           await rpc('submit_question', { p_title: title, p_body: body, p_nickname: name });
           $('[name=body]', form).value = '';
-          message(feedbackForm, '问题已提交，等张振回答后会显示在下方“大家的问题与回答”中。');
+          message(feedbackForm, '问题已提交，张振回答后会显示在下方。');
         } catch (error) { message(feedbackForm, errorText(error), true); }
+      }).finally(() => {
+        questionButton.textContent = '提交问题'; form.setAttribute('aria-busy', 'false'); syncQuestionButton();
       });
     });
     await load();
