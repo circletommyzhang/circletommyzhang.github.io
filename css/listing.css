@@ -1,0 +1,17 @@
+/* Keep publication dates and article titles in consistent columns. */
+.article-type-list .collection a.collection-item.collection-item-columns {
+  display: grid;
+  grid-template-columns: 6.5em minmax(0, 1fr);
+  column-gap: 1em;
+  align-items: baseline;
+}
+.article-type-list .collection-item-columns > time {
+  display: block;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.article-type-list .collection-item-columns > .collection-title {
+  display: block;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
