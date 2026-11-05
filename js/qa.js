@@ -68,18 +68,19 @@
   }
   function commentForm(container, context, list, reload) {
     const section = node('section', 'qa-section');
-    section.append(node('h2', '', '留下评论'));
+    const isAnswer = !!context.id && !context.path;
+    section.append(node('h2', '', isAnswer ? '参与回答' : '留下评论'));
     const form = node('form', 'qa-form'); form.method = 'post';
     const bodyWrap = node('div');
-    const bodyLabel = node('label', '', '评论内容'); bodyLabel.htmlFor = 'qa-comment-body';
+    const bodyLabel = node('label', '', isAnswer ? '你的回答' : '评论内容'); bodyLabel.htmlFor = 'qa-comment-body';
     const body = node('textarea'); body.id = 'qa-comment-body'; body.required = true; body.maxLength = 6000; body.rows = 5;
     bodyWrap.append(bodyLabel, body);
     const replyContext = node('div', 'qa-reply-context'); replyContext.hidden = true;
     let parent = null;
     const feedback = node('div'); feedback.setAttribute('role', 'status'); feedback.setAttribute('aria-live', 'polite');
     const actions = node('div', 'qa-actions');
-    const submit = node('button', 'qa-primary', '提交评论'); submit.type = 'submit';
-    actions.append(submit, node('span', 'qa-note', '评论审核后显示。'));
+    const submit = node('button', 'qa-primary', isAnswer ? '提交回答' : '提交评论'); submit.type = 'submit';
+    actions.append(submit, node('span', 'qa-note', isAnswer ? '回答审核后显示。' : '评论审核后显示。'));
     form.append(replyContext, bodyWrap, actions, feedback); section.append(form); container.append(section);
     function setReply(item) {
       parent = item.id; replyContext.replaceChildren(node('span', '', '回复 ' + item.nickname + ' '));
@@ -150,7 +151,7 @@
           const title = node('h2'), link = node('a', '', item.title); link.href = '/qa/?id=' + encodeURIComponent(item.id); title.append(link);
           box.append(title, meta(item.nickname, item.created_at, false), node('div', 'qa-message qa-excerpt', item.body));
           const status = node('div', 'qa-meta');
-          status.append(node('span', item.answered ? 'qa-badge' : '', item.answered ? '张振已回复' : '等待回答'), node('span', '', item.comment_count + ' 条讨论'));
+          status.append(node('span', item.comment_count > 0 ? 'qa-badge' : '', item.comment_count > 0 ? '已有回答' : '等待回答'), node('span', '', item.comment_count + ' 条讨论'));
           box.append(status); list.append(box);
         });
         offset += data.length; more.hidden = data.length < 20; feedback.replaceChildren();
@@ -179,7 +180,7 @@
           const name = await visitor();
           await rpc('submit_question', { p_title: title, p_body: body, p_nickname: name });
           $('[name=body]', form).value = '';
-          message(feedbackForm, '问题已提交，张振回答后会显示在下方。');
+          message(feedbackForm, '问题已提交，回答后会显示在下方。');
         } catch (error) { message(feedbackForm, errorText(error), true); }
       }).finally(() => {
         questionButton.textContent = '提交问题'; form.setAttribute('aria-busy', 'false'); syncQuestionButton();
