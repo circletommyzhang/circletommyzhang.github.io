@@ -61,33 +61,16 @@
     const b = node('button', cls || '', text); b.type = 'button';
     b.addEventListener('click', handler); return b;
   }
-  function markdownTools(textarea) {
-    const tools = node('div', 'qa-editor-tools'); tools.setAttribute('role', 'toolbar'); tools.setAttribute('aria-label', '文字格式');
-    function format(level) {
-      const start = textarea.selectionStart, end = textarea.selectionEnd, value = textarea.value, scroll = textarea.scrollTop;
-      if (!level) {
-        const selected = value.slice(start, end) || '加粗文字';
-        if (value.length - (end - start) + selected.length + 4 > textarea.maxLength) return;
-        textarea.setRangeText('**' + selected + '**', start, end, 'select'); textarea.setSelectionRange(start + 2, start + 2 + selected.length);
-      } else {
-        const a = value.lastIndexOf('\n', start - 1) + 1, nextBreak = value.indexOf('\n', end), b = nextBreak < 0 ? value.length : nextBreak;
-        const selected = value.slice(a, b).split('\n').map(line => '#'.repeat(level) + ' ' + line.replace(/^#{1,3}\s+/, '')).join('\n');
-        if (value.length - (b - a) + selected.length > textarea.maxLength) return;
-        textarea.setRangeText(selected, a, b, 'end');
-      }
-      textarea.focus({ preventScroll: true }); textarea.scrollTop = scroll; textarea.dispatchEvent(new Event('input', { bubbles: true }));
-    }
-    [1, 2, 3].forEach(level => { const b = button('H' + level, () => format(level), 'qa-format-button'); b.title = level + ' 级标题'; b.setAttribute('aria-label', level + '级标题'); tools.append(b); });
-    const bold = button('B', () => format(0), 'qa-format-button qa-format-bold'); bold.title = '加粗'; bold.setAttribute('aria-label', '加粗'); tools.append(bold);
-    const composer = textarea.closest('.qa-composer');
-    if (composer) $('.qa-composer-toolbar', composer).prepend(tools); else textarea.parentNode.insertBefore(tools, textarea);
-  }
+  function markdownTools(textarea) { return window.HRQARich && window.HRQARich.attach(textarea); }
+  function setEditorValue(textarea, value) { const editor = window.HRQARich && window.HRQARich.get(textarea); if (editor) editor.set(value); else textarea.value = value; }
+  function focusEditor(textarea) { const editor = window.HRQARich && window.HRQARich.get(textarea); editor ? editor.focus() : textarea.focus(); }
+  function hasEditorText(textarea) { const editor = window.HRQARich && window.HRQARich.get(textarea); return !!(editor ? editor.text() : textarea.value).trim(); }
+  function validateEditors(form) { return Array.from(form.querySelectorAll('textarea')).every(t => { const e = window.HRQARich && window.HRQARich.get(t); return !e || e.validate(); }); }
   function markdownBody(value, cls) {
     const body = node('div', cls);
     function inline(target, text) {
-      const re = /\*\*([^\n]+?)\*\*/g; let cursor = 0, match;
-      while ((match = re.exec(text))) { target.append(document.createTextNode(text.slice(cursor, match.index)), node('strong', '', match[1])); cursor = re.lastIndex; }
-      target.append(document.createTextNode(text.slice(cursor)));
+      const runs = window.HRQARich ? window.HRQARich.inline(text) : [{ text, bold: false }];
+      runs.forEach(run => target.append(run.bold ? node('strong', '', run.text) : document.createTextNode(run.text)));
     }
     let lines = [];
     function flush() { if (lines.length) { const p = node('p'); inline(p, lines.join('\n')); body.append(p); lines = []; } }
@@ -99,13 +82,14 @@
   }
   async function busy(form, action) {
     const controls = Array.from(form.querySelectorAll('button,input,textarea,select'));
-    controls.forEach(c => { c.disabled = true; });
-    try { return await action(); } finally { controls.forEach(c => { c.disabled = false; }); }
+    const editors = Array.from(form.querySelectorAll('textarea')).map(t => window.HRQARich && window.HRQARich.get(t)).filter(Boolean);
+    controls.forEach(c => { c.disabled = true; }); editors.forEach(e => e.enable(false));
+    try { return await action(); } finally { controls.forEach(c => { c.disabled = false; }); editors.forEach(e => e.enable(true)); }
   }
   function commentForm(container, context, list, reload) {
     const section = node('section', 'qa-section');
     const isAnswer = !!context.id && !context.path;
-    section.append(node('h2', '', isAnswer ? '参与回答' : '留下评论'));
+    section.append(node('h2', '', context.management ? '以站长身份回复' : isAnswer ? '参与回答' : '留下评论'));
     const form = node('form', 'qa-form'); form.method = 'post';
     const bodyWrap = node('div');
     const bodyId = context.formId || 'qa-comment-body';
@@ -113,31 +97,37 @@
     const body = node('textarea'); body.id = bodyId; body.required = true; body.maxLength = 6000; body.rows = 5;
     bodyWrap.append(bodyLabel, body);
     const replyContext = node('div', 'qa-reply-context'); replyContext.hidden = true;
-    let parent = null;
+    let parent = null, replyItem = null;
     const feedback = node('div'); feedback.setAttribute('role', 'status'); feedback.setAttribute('aria-live', 'polite');
     const actions = node('div', 'qa-actions');
-    const submit = node('button', 'qa-primary', isAnswer ? '提交回答' : '提交评论'); submit.type = 'submit';
-    actions.append(submit, node('span', 'qa-note', isAnswer ? '回答审核后显示。' : '评论审核后显示。'));
+    function adminSendLabel(target) { return target && target.status !== 'published' ? '审核通过并回复' : '发布回复'; }
+    const submit = node('button', 'qa-primary', context.management ? adminSendLabel(context.adminTarget) : isAnswer ? '提交回答' : '提交评论'); submit.type = 'submit';
+    actions.append(submit, node('span', 'qa-note', context.management ? '以“猎头张振”身份发布。' : isAnswer ? '回答审核后显示。' : '评论审核后显示。'));
     form.append(replyContext, bodyWrap, actions, feedback); section.append(form); container.append(section);
     markdownTools(body);
     function setReply(item) {
-      parent = item.id; replyContext.replaceChildren(node('span', '', '回复 ' + item.nickname + ' '));
-      replyContext.append(button('取消回复', () => { parent = null; replyContext.hidden = true; }, 'qa-reply'));
-      replyContext.hidden = false; body.focus();
+      parent = item.id; replyItem = item; replyContext.replaceChildren(node('span', '', '回复 ' + item.nickname + ' '));
+      replyContext.append(button('取消回复', () => { parent = null; replyItem = null; replyContext.hidden = true; if (context.management) submit.textContent = adminSendLabel(context.adminTarget); }, 'qa-reply'));
+      if (context.management) submit.textContent = adminSendLabel(item);
+      replyContext.hidden = false; focusEditor(body);
       form.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
     list.setReply = setReply;
     form.addEventListener('submit', event => {
       event.preventDefault();
-      if (!form.reportValidity()) return;
+      if (!form.reportValidity() || !validateEditors(form)) return;
       busy(form, async () => {
         feedback.replaceChildren();
         try {
-          const name = await visitor();
-          await rpc('submit_comment', { p_body: body.value.trim(), p_nickname: name,
-            p_thread_id: context.id || null, p_article_path: context.path || null,
-            p_article_title: context.title || null, p_parent_id: parent });
-          body.value = ''; parent = null; replyContext.hidden = true;
+          const target = context.management && (replyItem ? { id: replyItem.id, type: 'comment' } : context.adminTarget);
+          if (target) await rpc('admin_reply', { p_id: target.id, p_type: target.type, p_body: body.value.trim() });
+          else {
+            const name = await visitor();
+            await rpc('submit_comment', { p_body: body.value.trim(), p_nickname: name,
+              p_thread_id: context.id || null, p_article_path: context.path || null,
+              p_article_title: context.title || null, p_parent_id: parent });
+          }
+          setEditorValue(body, ''); parent = null; replyContext.hidden = true;
           message(feedback, '已提交，审核通过后就会显示。');
           if (reload) await reload();
         } catch (error) { message(feedback, errorText(error), true); }
@@ -220,22 +210,61 @@
     if (window.ResizeObserver) { const observer = new ResizeObserver(measure); observer.observe(text); feedCleanups.push(() => observer.disconnect()); }
     requestAnimationFrame(measure); return wrap;
   }
-  function feedQuestion(item, initial = null) {
+  function adminActions(value, type, viewer, host, management) {
+    const controls = node('div', 'qa-feed-actions qa-admin-actions'), feedback = node('div'); feedback.setAttribute('role', 'status');
+    let currentView = viewer, panel = null;
+    controls.append(node('span', 'qa-state', { pending: '待审核', published: '已公开', hidden: '已隐藏' }[value.status] || ''));
+    const edit = button('编辑', () => {
+      if (panel) return;
+      panel = node('form', 'qa-form qa-edit-panel'); panel.method = 'post';
+      const label = node('label', '', type === 'question' ? '编辑提问' : '编辑回答'), input = node('textarea');
+      input.id = 'edit-' + value.id; input.maxLength = 6000; input.required = true; input.value = value.body; label.htmlFor = input.id;
+      const actions = node('div', 'qa-actions'), save = node('button', 'qa-primary', '保存'); save.type = 'submit';
+      function close() { const editor = window.HRQARich && window.HRQARich.get(input); if (editor) editor.destroy(); panel.remove(); panel = null; currentView.hidden = false; edit.disabled = false; }
+      actions.append(save, button('取消', close)); panel.append(label, input, actions); host.insertBefore(panel, controls);
+      markdownTools(input); currentView.hidden = true; edit.disabled = true; focusEditor(input);
+      panel.addEventListener('submit', event => {
+        event.preventDefault(); if (!panel.reportValidity() || !validateEditors(panel)) return;
+        const nextBody = input.value, original = value.body;
+        if (nextBody === original) { close(); return; }
+        busy(panel, async () => {
+          try {
+            await rpc('admin_edit', { p_id: value.id, p_type: type, p_body: nextBody, p_original_body: original });
+            const nextView = expandableText(nextBody, value.id); currentView.replaceWith(nextView); currentView = nextView; value.body = nextBody;
+            close(); message(feedback, '已保存，刷新主页可查看更新。');
+          } catch (error) { message(feedback, errorText(error), true); }
+        });
+      });
+    }, 'qa-feed-action'); controls.append(edit);
+    async function moderate(status) {
+      if (panel) { message(feedback, '请先保存或取消当前编辑。', true); return; }
+      await busy(controls, async () => {
+        try { await rpc('admin_moderate', { p_id: value.id, p_type: type, p_status: status }); await management.reload(); }
+        catch (error) { message(feedback, errorText(error), true); }
+      });
+    }
+    if (value.status !== 'published') controls.append(button('审核通过', () => moderate('published'), 'qa-feed-action'));
+    if (value.status !== 'hidden') controls.append(button('隐藏', () => moderate('hidden'), 'qa-feed-action'));
+    host.append(controls, feedback);
+  }
+  function feedQuestion(item, initial = null, management = null) {
     const box = node('article', 'qa-feed-post'); box.id = 'question-' + item.id; box.setAttribute('aria-label', item.nickname + '的提问');
     const row = node('div', 'qa-feed-row'), content = node('div', 'qa-feed-content');
     row.append(avatar(false), content); box.append(row);
-    content.append(feedMeta(item, '提问：'), expandableText(item.body, item.id));
+    content.append(feedMeta(item, item.kind === 'article' ? '文章：' : '提问：'));
+    const questionView = expandableText(item.kind === 'article' ? item.title : item.body, item.id); content.append(questionView);
+    if (management && item.kind !== 'article') adminActions(item, 'question', questionView, content, management);
     const answers = node('div', 'qa-feed-answers'), state = node('div'), formHost = node('div', 'qa-feed-form');
     state.setAttribute('role', 'status'); formHost.hidden = true;
     const actions = node('div', 'qa-feed-actions');
     let formMade = false;
     function ensureForm() {
-      if (!formMade) { commentForm(formHost, { id: item.id, formId: 'qa-answer-' + item.id }, answers, null); formMade = true; }
+      if (!formMade) { commentForm(formHost, { id: item.id, formId: 'qa-answer-' + item.id, management: !!management, adminTarget: management && item.kind !== 'article' ? { id: item.id, type: 'question', status: item.status } : null }, answers, management ? management.reload : null); formMade = true; }
       formHost.hidden = false; participate.setAttribute('aria-expanded', 'true'); participate.textContent = '收起输入框';
     }
-    const participate = button('参与回答', () => {
-      if (!formHost.hidden) { formHost.hidden = true; participate.setAttribute('aria-expanded', 'false'); participate.textContent = '参与回答'; }
-      else { ensureForm(); $('textarea', formHost).focus(); }
+    const participate = button(management ? '回复' : '参与回答', () => {
+      if (!formHost.hidden) { formHost.hidden = true; participate.setAttribute('aria-expanded', 'false'); participate.textContent = management ? '回复' : '参与回答'; }
+      else { ensureForm(); focusEditor($('textarea', formHost)); }
     }, 'qa-feed-action');
     participate.setAttribute('aria-expanded', 'false');
     actions.append(participate); content.append(answers, state, actions, formHost);
@@ -243,7 +272,7 @@
     const moreAnswers = button('查看更多回答', async () => {
       moreAnswers.disabled = true;
       try {
-        const data = await rpc('get_thread', { p_id: item.id, p_offset: messages.length });
+        const data = await rpc(management ? 'admin_thread' : 'get_thread', { p_id: item.id, p_offset: messages.length });
         if (data) {
           const ids = new Set(messages.map(m => m.id));
           data.messages.forEach(m => { if (!ids.has(m.id)) messages.push(m); }); count = data.message_count;
@@ -259,7 +288,9 @@
         const answer = node('div', 'qa-feed-row qa-feed-answer'), body = node('div', 'qa-feed-content');
         answer.append(avatar(m.is_owner), body); body.append(feedMeta(m, m.parent_id ? '回复：' : '回答：'));
         if (m.parent_id && byId.has(m.parent_id)) body.append(node('div', 'qa-quote', '回复 ' + byId.get(m.parent_id).nickname + '：' + byId.get(m.parent_id).body.slice(0, 120)));
-        body.append(expandableText(m.body, m.id), button('回复', () => { ensureForm(); answers.setReply(m); }, 'qa-feed-action'));
+        const answerView = expandableText(m.body, m.id); body.append(answerView);
+        if (management) adminActions(m, 'comment', answerView, body, management);
+        body.append(button('回复', () => { ensureForm(); answers.setReply(m); }, 'qa-feed-action'));
         answers.append(answer);
       });
       moreAnswers.hidden = messages.length >= count;
@@ -328,11 +359,11 @@
     const form = $('#qa-question-form'), feedbackForm = $('#qa-question-feedback');
     const questionBody = $('[name=body]', form), questionButton = $('[type=submit]', form);
     markdownTools(questionBody);
-    function syncQuestionButton() { questionButton.disabled = !questionBody.value.trim(); }
+    function syncQuestionButton() { questionButton.disabled = !hasEditorText(questionBody); }
     questionBody.addEventListener('input', syncQuestionButton);
     syncQuestionButton();
     form.addEventListener('submit', event => {
-      event.preventDefault(); if (!form.reportValidity()) return;
+      event.preventDefault(); if (!form.reportValidity() || !validateEditors(form)) return;
       const body = $('[name=body]', form).value.trim();
       if (!body) { message(feedbackForm, '请填写你的问题。', true); return; }
       const compact = body.replace(/\s+/g, ' ');
@@ -345,7 +376,7 @@
         try {
           const name = await visitor();
           await rpc('submit_question', { p_title: title, p_body: body, p_nickname: name });
-          $('[name=body]', form).value = '';
+          setEditorValue(questionBody, '');
           message(feedbackForm, '问题已提交，回答后会显示在下方。');
         } catch (error) { message(feedbackForm, errorText(error), true); }
       }).finally(() => {
@@ -380,57 +411,32 @@
   async function admin() {
     const login = $('#qa-login'), board = $('#qa-admin-board'), loginFeedback = $('#qa-login-feedback');
     const list = $('#qa-admin-list'), feedback = $('#qa-admin-feedback'), status = $('#qa-admin-status'), more = $('#qa-admin-more');
-    let offset = 0;
+    let offset = 0, generation = 0; const shown = new Set();
     function showLogin() { board.hidden = true; login.hidden = false; }
     async function load(reset = true) {
-      if (reset) { offset = 0; list.replaceChildren(); }
+      const current = reset ? ++generation : generation;
+      if (reset) { offset = 0; shown.clear(); feedCleanups.splice(0).forEach(cleanup => cleanup()); list.replaceChildren(); }
       feedback.replaceChildren(); more.disabled = true;
       try {
         const items = await rpc('admin_queue', { p_status: status.value, p_offset: offset });
-        items.forEach(item => {
-          const card = node('article', 'qa-admin-card');
-          card.append(node('p', 'qa-muted', item.type === 'question' ? '问题' : '评论 · ' + item.title));
-          if (item.type === 'question') card.append(node('h2', '', item.title));
-          card.append(meta(item.nickname, item.created_at));
-          if (item.parent_body) card.append(node('div', 'qa-quote', '回复：' + item.parent_body.slice(0, 240)));
-          card.append(node('div', 'qa-message', item.body));
-          const actions = node('div', 'qa-actions'), localFeedback = node('div'); localFeedback.setAttribute('role', 'status');
-          async function moderate(next) {
-            await busy(card, async () => {
-              try { await rpc('admin_moderate', { p_id: item.id, p_type: item.type, p_status: next }); await load(); }
-              catch (error) { message(localFeedback, errorText(error), true); }
-            });
-          }
-          if (item.status !== 'published') actions.append(button('审核通过', () => moderate('published'), 'qa-primary'));
-          if (item.status !== 'hidden') actions.append(button('隐藏', () => moderate('hidden')));
-          if (item.status === 'published') {
-            const a = node('a', '', '查看公开页面');
-            a.href = item.article_path ? encodeURI(item.article_path) + '#comments' : '/qa/?id=' + item.thread_id;
-            a.target = '_blank'; a.rel = 'noopener'; actions.append(a);
-          }
-          const reply = node('form', 'qa-form'); reply.method = 'post';
-          const replyLabel = node('label', '', '以“猎头张振”身份回复');
-          const body = node('textarea'); body.required = true; body.maxLength = 6000; body.rows = 6;
-          body.id = 'reply-' + item.id; replyLabel.htmlFor = body.id;
-          const send = node('button', 'qa-primary', item.status === 'published' ? '发布回复' : '审核通过并回复'); send.type = 'submit';
-          reply.append(replyLabel, body, send);
-          markdownTools(body);
-          reply.addEventListener('submit', event => {
-            event.preventDefault(); if (!reply.reportValidity()) return;
-            busy(card, async () => {
-              try {
-                await rpc('admin_reply', { p_body: body.value.trim(), p_id: item.id, p_type: item.type });
-                body.value = '';
-                await load();
-              } catch (error) { message(localFeedback, errorText(error), true); }
-            });
-          });
-          card.append(actions, reply, localFeedback); list.append(card);
-        });
+        if (current !== generation) return;
+        const ids = Array.from(new Set(items.map(item => item.thread_id))).filter(id => !shown.has(id));
+        const jobs = ids.map(id => { const placeholder = node('div', 'qa-note', '正在加载问答…'); list.append(placeholder); return { id, placeholder }; });
+        for (let i = 0; i < jobs.length; i += 4) {
+          await Promise.all(jobs.slice(i, i + 4).map(async ({ id, placeholder }) => {
+            try {
+              const thread = await rpc('admin_thread', { p_id: id });
+              if (current !== generation) return;
+              if (thread) { shown.add(id); placeholder.replaceWith(feedQuestion(thread, thread, { reload: () => load() })); }
+              else placeholder.remove();
+            } catch (error) { if (current === generation) { message(placeholder, errorText(error), true); placeholder.append(button('重试', () => load(), 'qa-feed-action')); } }
+          }));
+        }
+        if (current !== generation) return;
         offset += items.length; more.hidden = items.length < 50;
-        if (!offset) list.append(node('p', 'qa-empty', '这里暂时没有内容。'));
-      } catch (error) { message(feedback, errorText(error), true); }
-      finally { more.disabled = false; }
+        if (!items.length && !offset) list.append(node('p', 'qa-empty', '这里暂时没有内容。'));
+      } catch (error) { if (current === generation) message(feedback, errorText(error), true); }
+      finally { if (current === generation) more.disabled = false; }
     }
     async function verify() {
       const { data } = await client.auth.getSession();
@@ -450,7 +456,7 @@
         } catch (error) { message(loginFeedback, errorText(error), true); }
       });
     });
-    $('#qa-logout').addEventListener('click', async () => { await client.auth.signOut(); list.replaceChildren(); showLogin(); });
+    $('#qa-logout').addEventListener('click', async () => { generation++; await client.auth.signOut(); list.replaceChildren(); showLogin(); });
     $('#qa-refresh').addEventListener('click', () => load()); status.addEventListener('change', () => load()); more.addEventListener('click', () => load(false));
     try { await verify(); } catch (error) { showLogin(); message(loginFeedback, errorText(error), true); }
   }
