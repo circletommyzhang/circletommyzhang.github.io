@@ -33,3 +33,25 @@
 .qa-admin-card{border-color:#e6e6e2;border-radius:16px;padding:24px}.qa-admin-bar select,.qa-form input,.qa-form textarea:not(#qa-question-body){border-radius:12px;border-color:#dededb;box-shadow:none}
 @media(max-width:767px){.qa-main{padding:32px 20px 48px}.hrqa h1{font-size:25px}.qa-header{margin-bottom:28px}.qa-header p{font-size:15px;line-height:1.85}.qa-composer{border-radius:18px}#qa-question-body{height:176px;min-height:176px;max-height:176px;padding:16px 16px 6px;font-size:16px}.qa-composer-toolbar{padding:8px 12px 12px}.qa-note{font-size:13px}.qa-public-list{margin-top:28px}}
 @media(prefers-reduced-motion:reduce){.qa-composer,.hrqa button{transition:none}.hrqa button.qa-primary:active:not(:disabled){transform:none}}
+
+/* In-place question and answer feed; original font sizes and reading rhythm. */
+.qa-feed-post{padding:28px 0;border-bottom:1px solid #e8e8e5;scroll-margin-top:20px}
+.qa-feed-row{display:flex;align-items:flex-start;gap:14px;min-width:0}.qa-feed-content{flex:1;min-width:0}
+.qa-feed-avatar{flex:none;width:36px;height:36px;border-radius:50%;background:#f0f0ed;position:relative;display:inline-flex;align-items:center;justify-content:center;overflow:hidden}
+.qa-feed-avatar svg{width:25px;height:25px;fill:#c2c2bd}.qa-feed-avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.qa-feed-meta{min-height:28px;gap:10px;line-height:1.6;margin-bottom:8px}.qa-feed-meta .qa-name{font-weight:500;font-size:15px;color:#333}.qa-feed-role{color:#666}
+.qa-feed-text{font-size:16px;line-height:1.75;overflow-wrap:anywhere;color:#333}.qa-feed-text.is-collapsed{max-height:10.5em;overflow:hidden}
+.qa-feed-text p,.qa-markdown p{white-space:pre-wrap;margin:0 0 14px}.qa-feed-text p:last-child,.qa-markdown p:last-child{margin-bottom:0}
+.qa-feed-text h1,.qa-markdown h1{font-size:22px;font-weight:600;line-height:1.5;margin:14px 0 10px;letter-spacing:0}
+.qa-feed-text h2,.qa-markdown h2{font-size:20px;font-weight:600;line-height:1.5;margin:14px 0 10px}
+.qa-feed-text h3,.qa-markdown h3{font-size:18px;font-weight:600;line-height:1.5;margin:12px 0 8px}
+.hrqa button.qa-expand-toggle,.hrqa button.qa-feed-action{background:transparent;border:0;border-radius:4px;padding:2px 0;min-height:30px;font-size:14px;font-weight:400;color:#666;box-shadow:none}
+.hrqa button.qa-expand-toggle{color:#444;text-decoration:underline;text-underline-offset:3px;margin-top:6px}
+.hrqa button.qa-expand-toggle:hover,.hrqa button.qa-feed-action:hover{color:#111;background:transparent;filter:none}
+.qa-feed-answers{margin-top:22px}.qa-feed-answer{padding:18px 0;border-top:1px solid #efefed;gap:10px}.qa-feed-answer .qa-feed-avatar{width:28px;height:28px}.qa-feed-answer .qa-feed-avatar svg{width:21px;height:21px}
+.qa-feed-actions{display:flex;gap:18px;margin-top:12px}.qa-feed-form{margin:16px 0}.qa-feed-form .qa-section{margin-top:0;padding-top:16px}.qa-feed-form h2{font-size:16px}
+.qa-pagination{display:flex;align-items:center;justify-content:center;gap:20px;padding:28px 0}.qa-pagination span{font-size:14px;color:#777}.qa-pagination button:disabled{opacity:.35;cursor:default}
+.qa-editor-tools{display:flex;align-items:center;gap:3px;margin:6px 0}.qa-composer-toolbar{justify-content:space-between;gap:12px}
+.hrqa button.qa-format-button{font-family:var(--ui-font);background:transparent;color:#777;border:0;border-radius:6px;font-size:13px;font-weight:500;min-height:30px;padding:4px 8px;min-width:30px}
+.hrqa button.qa-format-button:hover{background:#f0f0ed;color:#222;filter:none}.hrqa button.qa-format-bold{font-weight:700}.qa-composer .qa-editor-tools{margin:0}
+@media(max-width:767px){.qa-feed-row{gap:10px}.qa-feed-avatar{width:32px;height:32px}.qa-feed-meta{gap:7px;font-size:12px}.qa-feed-meta .qa-name{font-size:14px}.qa-feed-role{font-size:13px}.qa-feed-post{padding:24px 0}.qa-feed-answer .qa-feed-avatar{width:26px;height:26px}.qa-pagination{gap:14px}}
