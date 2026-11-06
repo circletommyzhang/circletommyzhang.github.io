@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /qa/admin/
+
+Sitemap: https://www.hrquanzi.com/sitemap.xml
