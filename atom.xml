@@ -6,7 +6,7 @@
   <link href="https://www.hrquanzi.com/atom.xml" rel="self"/>
   
   <link href="https://www.hrquanzi.com/"/>
-  <updated>2026-11-06T22:57:02+08:00</updated>
+  <updated>2026-11-07T00:30:07+08:00</updated>
   <id>https://www.hrquanzi.com/</id>
   
   <author>
@@ -657,6 +657,101 @@
 &lt;p&gt;于是，他在谈判中能够更自然地来回切换视角，更高维度地理解问题，也更精准地引导对话方向。&lt;/p&gt;
 &lt;p&gt;一定要把搞定“人”的经验积累起来，如果你在搞定&quot;人&quot;这个环节感到无力，可以加入我的猎头陪跑，在实战中，训练你的思维框架能力，请看：网站目录关于 猎头陪跑 的介绍&lt;/p&gt;
 </summary><category term="认知/思维/驱动力" scheme="https://www.hrquanzi.com/categories/"/></entry>
+<entry><title>OpenClaw出现后,90%的猎头都在危险区</title><link href="https://www.hrquanzi.com/2026/02/07/OpenClaw%E5%87%BA%E7%8E%B0%E5%90%8E-90%25%E7%9A%84%E7%8C%8E%E5%A4%B4%E9%83%BD%E5%9C%A8%E5%8D%B1%E9%99%A9%E5%8C%BA/"/><id>https://www.hrquanzi.com/2026/02/07/OpenClaw%E5%87%BA%E7%8E%B0%E5%90%8E-90%25%E7%9A%84%E7%8C%8E%E5%A4%B4%E9%83%BD%E5%9C%A8%E5%8D%B1%E9%99%A9%E5%8C%BA/</id><published>2026-02-07T18:26:00+08:00</published><updated>2026-11-07T00:30:07+08:00</updated><summary type="html">&lt;hr&gt;
+&lt;h2 id=&quot;section-1&quot;&gt;一、最近国外一个 OpenClaw 出圈了，它到底是什么？&lt;/h2&gt;
+&lt;p&gt;最近一段时间，在海外技术圈、AI Agent 圈里，一个名字被反复提起：OpenClaw。不是一个聊天机器人，而是一个开源的 AI Agent（智能体）框架。&lt;/p&gt;
+&lt;p&gt;OpenClaw 最初由奥地利软件工程师彼得·斯坦伯格（Peter Steinberger）开发，它最早在 2025 年 11 月以 Clawdbot 的名字发布在 GitHub 上。后来因为商标问题一度更名为 Moltbot，最终定名 OpenClaw。&lt;/p&gt;
+&lt;p&gt;OpenClaw 上线后在 GitHub 上增长极快，仅几周就获得了 超过十万颗星（100,000+ stars），这是开源项目中极为罕见的爆发式增长。&lt;/p&gt;
+&lt;p&gt;它的核心理念很简单：&lt;/p&gt;
+&lt;p&gt;AI 不只是回答问题，而是可以被授权，去“真的做事”。&lt;/p&gt;
+&lt;p&gt;也正因为这个定位，它在海外被大量拿来做：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;自动化工作流&lt;/li&gt;
+&lt;li&gt;个人 AI 助理&lt;/li&gt;
+&lt;li&gt;企业内部 Agent&lt;/li&gt;
+&lt;li&gt;Research / Ops / 投研 / 招聘 等高信息密度岗位的辅助系统&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这2天美团联合创始人王慧文也在积极行动，貌似看到的确定性：&lt;/p&gt;
+&lt;figure&gt;&lt;a href=&quot;/images/articles/ai-tools-openclaw.png&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;img src=&quot;/images/articles/ai-tools-openclaw.png&quot; alt=&quot;原文配图&quot; width=&quot;1080&quot; height=&quot;1006&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; style=&quot;max-width:100%;height:auto&quot;&gt;&lt;/a&gt;&lt;/figure&gt;
+&lt;p&gt;敏锐的人应该会思考：他是否可以应用到猎头领域，答案是肯定的&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;section-2&quot;&gt;二、对猎头顾问来说，OpenClaw 能做什么？&lt;/h2&gt;
+&lt;p&gt;先说结论：&lt;/p&gt;
+&lt;p&gt;OpenClaw 不是“替代猎头”，而是会替代大量“猎头每天在做，但并不真正值钱的环节”。&lt;/p&gt;
+&lt;p&gt;我随便说一些他可以做的环节(技术还在不断演进)&lt;/p&gt;
+&lt;h3 id=&quot;section-3&quot;&gt;1、网上找人&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;按目标公司 + 关键词在招聘网站自动搜寻候选人&lt;/li&gt;
+&lt;li&gt;定时扫描 LinkedIn / 脉脉 / GitHub / Scholar 新增或变动人选&lt;/li&gt;
+&lt;li&gt;扫描候选人最近动态（发帖、项目、论文、开源更新）&lt;/li&gt;
+&lt;li&gt;对搜到的候选人进行第一层匹配筛选&lt;/li&gt;
+&lt;li&gt;将初筛后候选人加入待整理候选池&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;section-4&quot;&gt;2、管理人才库（整理 / 打标签 / 结构化）&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;将候选人登记进表格或系统&lt;/li&gt;
+&lt;li&gt;拆解候选人简历关键信息&lt;/li&gt;
+&lt;li&gt;标记候选人技术 / 岗位细分方向&lt;/li&gt;
+&lt;li&gt;标记候选人职级与角色定位&lt;/li&gt;
+&lt;li&gt;标记候选人管理团队人数&lt;/li&gt;
+&lt;li&gt;标记候选人参与项目规模与复杂度&lt;/li&gt;
+&lt;li&gt;记录候选人过往公司与行业背景&lt;/li&gt;
+&lt;li&gt;记录与候选人历史联系与沟通要点&lt;/li&gt;
+&lt;li&gt;将零散文字信息转为结构化字段&lt;/li&gt;
+&lt;li&gt;合并同一候选人的多来源信息&lt;/li&gt;
+&lt;li&gt;按技术方向 / 行业 / 职级对候选人分类存储&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;section-5&quot;&gt;3、联系他们（开场文案 / 发送）&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;根据候选人简历生成个性化开场文案&lt;/li&gt;
+&lt;li&gt;匹配当前岗位生成定向开场文案&lt;/li&gt;
+&lt;li&gt;自动提取候选人邮箱或允许的联系方式&lt;/li&gt;
+&lt;li&gt;将开场文案生成至邮件草稿(你自己优化了发送)&lt;/li&gt;
+&lt;li&gt;在规则约束与充分训练后支持自动发送&lt;/li&gt;
+&lt;li&gt;记录每一次联系行为与结果&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;当然，他才刚出现，很多还不是很成熟，但是这是趋势，就像3年前出现ChatGpt一样&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;部署和配置门槛仍然偏高&lt;/li&gt;
+&lt;li&gt;对使用者的“流程设计能力”要求高&lt;/li&gt;
+&lt;li&gt;对权限、安全、稳定性仍需控制&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;对于猎头来说&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;section-6&quot;&gt;三、哪些是他长期都不能做的？&lt;/h2&gt;
+&lt;p&gt;下面这些，是猎头这份工作的“护城河”。&lt;/p&gt;
+&lt;h3 id=&quot;section-7&quot;&gt;1、人与人之间的信任&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;建立真实信任&lt;/li&gt;
+&lt;li&gt;让候选人说真话&lt;/li&gt;
+&lt;li&gt;用个人信誉兜底&lt;/li&gt;
+&lt;li&gt;长期关系维护&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;section-8&quot;&gt;2、深层动机与情绪判断&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;识别口是心非&lt;/li&gt;
+&lt;li&gt;感知犹豫、焦虑、抗拒&lt;/li&gt;
+&lt;li&gt;挖掘动机/痛点&lt;/li&gt;
+&lt;li&gt;理解矛盾心理&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;section-9&quot;&gt;3、关键决策与取舍&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;该不该继续推进&lt;/li&gt;
+&lt;li&gt;什么时候该停&lt;/li&gt;
+&lt;li&gt;是否值得消耗关系&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;section-10&quot;&gt;4、复杂博弈与影响&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;非理性行为处理&lt;/li&gt;
+&lt;li&gt;临场谈判调整&lt;/li&gt;
+&lt;li&gt;改变一个人的认知&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;section-11&quot;&gt;5、责任与后果&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;为推荐结果负责&lt;/li&gt;
+&lt;li&gt;为失败关系兜底&lt;/li&gt;
+&lt;li&gt;在灰度地带做判断&lt;/li&gt;
+&lt;/ul&gt;</summary><category term="AI/工具/效率" scheme="https://www.hrquanzi.com/categories/"/></entry>
 <entry><title>为何很多猎头很努力，业绩却总卡在一个区间</title><link href="https://www.hrquanzi.com/2026/01/20/%E4%B8%BA%E4%BD%95%E5%BE%88%E5%A4%9A%E7%8C%8E%E5%A4%B4%E5%BE%88%E5%8A%AA%E5%8A%9B-%E4%B8%9A%E7%BB%A9%E5%8D%B4%E6%80%BB%E5%8D%A1%E5%9C%A8%E4%B8%80%E4%B8%AA%E5%8C%BA%E9%97%B4/"/><id>https://www.hrquanzi.com/2026/01/20/%E4%B8%BA%E4%BD%95%E5%BE%88%E5%A4%9A%E7%8C%8E%E5%A4%B4%E5%BE%88%E5%8A%AA%E5%8A%9B-%E4%B8%9A%E7%BB%A9%E5%8D%B4%E6%80%BB%E5%8D%A1%E5%9C%A8%E4%B8%80%E4%B8%AA%E5%8C%BA%E9%97%B4/</id><published>2026-01-20T18:48:00+08:00</published><updated>2026-11-06T01:09:22+08:00</updated><summary type="html">&lt;p&gt;本文只讨论内在因素(即外部环境不变的情况下)很多猎头在做到一定业绩之后，就是卡在一个区间里，上不去，也掉不下来。不是不努力。每天该做的事都在做，电话也不少，候选人也聊，客户也跟，流程也熟，方法也学过。&lt;/p&gt;
 &lt;p&gt;50 万、80 万、100 万，甚至更高，每一个数字背后，几乎都对应着一批“很努力但很苦恼”的猎头。&lt;/p&gt;
 &lt;p&gt;在我的猎头陪跑中，这个现象，并不罕见。&lt;/p&gt;
@@ -1802,6 +1897,56 @@
 &lt;p&gt;-帮算法人才找到更好工作&lt;/p&gt;
 &lt;p&gt;-帮算法人才招聘优秀下属&lt;/p&gt;
 &lt;p&gt;-帮算法人才认识同行(沙龙)&lt;/p&gt;</summary><category term="认知/思维/驱动力" scheme="https://www.hrquanzi.com/categories/"/></entry>
+<entry><title>大模型的出现，是猎头的福音</title><link href="https://www.hrquanzi.com/2025/05/07/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%87%BA%E7%8E%B0-%E6%98%AF%E7%8C%8E%E5%A4%B4%E7%9A%84%E7%A6%8F%E9%9F%B3/"/><id>https://www.hrquanzi.com/2025/05/07/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%87%BA%E7%8E%B0-%E6%98%AF%E7%8C%8E%E5%A4%B4%E7%9A%84%E7%A6%8F%E9%9F%B3/</id><published>2025-05-07T16:04:00+08:00</published><updated>2026-11-07T00:30:07+08:00</updated><summary type="html">&lt;p&gt;Chatgpt类的产品已经出现2年了，他的出现对于猎头来说，尤其是对专注算法+工程类岗位的猎头来说，大模型的价值远不止“写JD、润色邮件”这么简单&lt;/p&gt;
+&lt;p&gt;以下是我这2年使用的的总结&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;section-1&quot;&gt;一、帮我们“看懂”技术细节，跨越认知边界&lt;/h2&gt;
+&lt;p&gt;做技术猎头最怕什么？怕推荐错方向。&lt;/p&gt;
+&lt;p&gt;比如一个客户明确需要的是做推荐算法策略的候选人，目标是能在业务线上快速调优策略、提升指标。但你从简历库里找到的一个人，简介写的是“负责推荐系统中的模型优化”。如果不深入分析，你可能会误以为他符合要求，结果实际是他主要做的是推荐模型的预训练优化，属于偏研究型的 offline 基础建模工作，和客户要的策略调参、线上实验、实时 AB 测试完全不是一回事。最后你浪费了很多时间&lt;/p&gt;
+&lt;p&gt;而现在，你只要把简历贴给 ChatGPT，它会立刻告诉你：&lt;/p&gt;
+&lt;p&gt;该候选人主攻方向为：大模型算法 → 对齐技术（如DPO） → 推荐系统预训练阶段的结构建模与效率优化&lt;/p&gt;
+&lt;p&gt;再比如，你看到一个候选人简历里面有几篇顶会论文，每一篇论文很多页，又是英文，很简单，你只要把论文标题发给chatgpt，他可以很清楚告诉你他是做什么技术领域的，如图：&lt;/p&gt;
+&lt;figure&gt;&lt;a href=&quot;/images/articles/ai-tools-models.png&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;img src=&quot;/images/articles/ai-tools-models.png&quot; alt=&quot;原文配图&quot; width=&quot;1416&quot; height=&quot;1284&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot; style=&quot;max-width:100%;height:auto&quot;&gt;&lt;/a&gt;&lt;/figure&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;section-2&quot;&gt;二、帮我们制定“工作节奏策略”&lt;/h2&gt;
+&lt;p&gt;比如，你手上同时要服务 4 个客户，每个客户有 3 个岗位，每个岗位的难度不同，你所拥有的资源也不一样：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;有的岗位你已经掌握了候选人电话，可以直接拨打推进；&lt;/li&gt;
+&lt;li&gt;有的只有邮箱或站内信，需要耐心等待回复；&lt;/li&gt;
+&lt;li&gt;有的甚至需要通过内部推荐或第三方介绍才能接触到人选。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;面对如此复杂的任务排列，如何制定最优策略，把每天的时间分配给最值得推进的任务？&lt;/p&gt;
+&lt;p&gt;其实，你完全可以把这些信息结构化后交给 ChatGPT，写清楚每个岗位的资源情况、紧急程度、匹配难度，它就能给你一份高效可执行的优先级方案：&lt;/p&gt;
+&lt;p&gt;哪些先打电话、哪些先建池、哪些岗位要放缓推进节奏……&lt;/p&gt;
+&lt;p&gt;再结合你的个人判断微调一下，这就是你专属的&lt;strong&gt;“猎头工作调度系统”&lt;/strong&gt;。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;section-3&quot;&gt;三、帮我们“预演谈判”，提升你的影响力&lt;/h2&gt;
+&lt;p&gt;我们在跟进候选人时可能会需要这种场景：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;“我现在公司很稳，就是觉得成长慢，但换工作太累了。”&lt;/li&gt;
+&lt;li&gt;“我听说xx公司压力大，996的不考虑。”&lt;/li&gt;
+&lt;li&gt;“我做推荐算法的，这种大模型的我能行吗？”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这些都是认知和情绪问题。以前你只有你自己的思路，或者最多问你的同事/老板(还不一定帮到你)，现在你只需要和chatgpt交流，他可以综合各种思路，给你不同的答案&lt;/p&gt;
+&lt;p&gt;比如：&lt;/p&gt;
+&lt;p&gt;“一个工作10年的推荐算法工程师，目前在稳定大厂，年包80w，对成长停滞感到焦虑但对跳槽缺乏信心，该如何设计一套逐步引导他转变认知的对话框架？”&lt;/p&gt;
+&lt;p&gt;GPT 可以根据 MBTI 性格模型、候选人背景、行业趋势给出“多轮沟通脚本”，甚至连你每句话后面“他可能的反应”和“如何继续推进”都能预测。&lt;/p&gt;
+&lt;p&gt;这就好比你请了一个谈判教练，实时陪你“复盘”对话与反应机制，让你在与技术人沟通时，既专业又心理穿透力更强。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;section-4&quot;&gt;四、未来展望：当 AI agent 成熟，猎头将真正只专注“高阶沟通”&lt;/h2&gt;
+&lt;p&gt;你可以想象一个不远的未来：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;你把 JD 和客户需求输入系统；&lt;/li&gt;
+&lt;li&gt;Agent 去各个数据库（领英、脉脉、OpenReview）抓人；&lt;/li&gt;
+&lt;li&gt;自动解析技术方向、匹配岗位、写定制化邮件；&lt;/li&gt;
+&lt;li&gt;自动筛选回复并汇总有意向的人选；&lt;/li&gt;
+&lt;li&gt;你只需要——打那一通最关键的电话，完成最终说服。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这不是幻想。现在已有早期 Agent 原型可以结合 RAG 检索、候选人简历理解、对话生成和多轮交互逻辑链规划。只要技术继续演化，你的猎头助手就能替你完成 30%的“信息工作”。&lt;/p&gt;
+&lt;p&gt;你，只需要发挥那70%的判断力、谈判力、人性洞察力。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&quot;section-5&quot;&gt;总结&lt;/h2&gt;
+&lt;p&gt;所有以咨询为核心、没有实体产品的工作，随着大模型的发展，正迎来前所未有的助力。但前提是：你必须真正学会如何使用它，才能显著提升效率与产出。&lt;/p&gt;</summary><category term="AI/工具/效率" scheme="https://www.hrquanzi.com/categories/"/></entry>
 <entry>
     <title>猎头能为候选人提供什么价值</title>
     <link href="https://www.hrquanzi.com/2026/05/17/%E7%8C%8E%E5%A4%B4%E8%83%BD%E4%B8%BA%E5%80%99%E9%80%89%E4%BA%BA%E6%8F%90%E4%BE%9B%E4%BB%80%E4%B9%88%E4%BB%B7%E5%80%BC/"/>
