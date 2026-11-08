@@ -6,7 +6,7 @@
   <link href="https://www.hrquanzi.com/atom.xml" rel="self"/>
   
   <link href="https://www.hrquanzi.com/"/>
-  <updated>2026-11-08T01:02:55+08:00</updated>
+  <updated>2026-11-08T13:24:08+08:00</updated>
   <id>https://www.hrquanzi.com/</id>
   
   <author>
@@ -317,6 +317,81 @@
 &lt;p&gt;看自己掌握了什么信息 → 提炼真正的问题 → 理清问题之间的关系 → 总结出可以复用的规律。&lt;/p&gt;
 &lt;p&gt;如果还是不行，可以加入我的猎头陪跑，详情请看网站左侧：“猎头陪跑”介绍&lt;/p&gt;
 </summary><category term="认知/思维/驱动力" scheme="https://www.hrquanzi.com/articles/"/></entry>
+<entry><title>把猎头公司改造成AI驱动型公司,是弯道超车的好机会</title><link href="https://www.hrquanzi.com/2026/08/28/%E6%8A%8A%E7%8C%8E%E5%A4%B4%E5%85%AC%E5%8F%B8%E6%94%B9%E9%80%A0%E6%88%90AI%E9%A9%B1%E5%8A%A8%E5%9E%8B%E5%85%AC%E5%8F%B8-%E6%98%AF%E5%BC%AF%E9%81%93%E8%B6%85%E8%BD%A6%E7%9A%84%E5%A5%BD%E6%9C%BA%E4%BC%9A/"/><id>https://www.hrquanzi.com/2026/08/28/%E6%8A%8A%E7%8C%8E%E5%A4%B4%E5%85%AC%E5%8F%B8%E6%94%B9%E9%80%A0%E6%88%90AI%E9%A9%B1%E5%8A%A8%E5%9E%8B%E5%85%AC%E5%8F%B8-%E6%98%AF%E5%BC%AF%E9%81%93%E8%B6%85%E8%BD%A6%E7%9A%84%E5%A5%BD%E6%9C%BA%E4%BC%9A/</id><published>2026-08-28T18:53:00+08:00</published><updated>2026-11-08T13:24:08+08:00</updated><summary type="html">&lt;p&gt;标题已经写了我的观点，咱们来细说为什么。&lt;/p&gt;
+&lt;p&gt;我把影响一家猎头公司业绩的核心因素，大致分成四个：&lt;/p&gt;
+&lt;p&gt;有没有好的客户；&lt;/p&gt;
+&lt;p&gt;有没有足够好的人才资源；&lt;/p&gt;
+&lt;p&gt;顾问有没有足够强的谈判力；&lt;/p&gt;
+&lt;p&gt;公司有没有足够强的组织能力。&lt;/p&gt;
+&lt;p&gt;一家猎头公司最终能做到多少业绩/人效，和这4个因素有很大关系&lt;/p&gt;
+&lt;p&gt;我们一个一个来看(以下内容都用Agent来代表AI)&lt;/p&gt;
+&lt;hr/&gt;&lt;h2 id=&quot;section-1&quot;&gt;一、好的客户：Agent能帮助，但改变有限&lt;/h2&gt;
+&lt;h3 id=&quot;section-2&quot;&gt;1、一个客户愿不愿意把核心岗位给你，有新的职位会不会第一时间想到你，甚至愿不愿意给你独家职位，这些最终还是取决于客户对你的信任。所以四个因素里面，我认为客户资源是Agent最难直接改变的一项。&lt;/h3&gt;
+&lt;h3 id=&quot;section-3&quot;&gt;2、但是Agent可以辅助提高客户开发的覆盖率和效率&lt;/h3&gt;
+&lt;p&gt;过去一个顾问可能只能长期关注几十家公司。&lt;/p&gt;
+&lt;p&gt;现在完全可以让 Agent 持续研究更多潜在客户：哪个公司刚刚融资、哪些公司有了一个新的业务线等等，比如我用Agent花了2分钟，就把刚刚召开的2026世界机器人大会的公司名称、业务方向、公司全面介绍全部放入我的飞书表格&lt;/p&gt;
+&lt;figure&gt;&lt;a href=&quot;/images/articles/ai-driven-company-customers.png&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;img src=&quot;/images/articles/ai-driven-company-customers.png&quot; alt=&quot;Agent整理世界机器人大会参展企业信息&quot; width=&quot;1384&quot; height=&quot;544&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;/&gt;&lt;/a&gt;&lt;/figure&gt;
+&lt;hr/&gt;&lt;h2 id=&quot;section-4&quot;&gt;二、人才资源：这是Agent最容易产生数量级变化的地方&lt;/h2&gt;
+&lt;h3 id=&quot;section-5&quot;&gt;1、一个顾问一天真正能够认真看的简历数量是有限的&lt;/h3&gt;
+&lt;p&gt;人的信息处理能力存在一个非常明显的物理上限。100份简历你要一个一个看，最后发现某些是合适的，你还不能纯用关键词匹配，会漏，地毯式是最全的,但是地毯式是很痛苦的&lt;/p&gt;
+&lt;h3 id=&quot;section-6&quot;&gt;2、Agent首先把这个信息处理上限打开了&lt;/h3&gt;
+&lt;p&gt;简历读取、信息提取、结构化、打标签、初步判断、JD匹配，这些工作现在都可以大量交给Agent。翻个5倍没有问题，我的Agent每天都在不停的工作&lt;/p&gt;
+&lt;h3 id=&quot;section-7&quot;&gt;3、比招聘网站更重要的，是过去大量“存在，但用不起来”的人才信息&lt;/h3&gt;
+&lt;p&gt;比如一个行业大会。&lt;/p&gt;
+&lt;p&gt;可能有几百个演讲嘉宾、技术负责人、创始人和专家。&lt;/p&gt;
+&lt;p&gt;这些信息以前有没有？一直都有。&lt;/p&gt;
+&lt;p&gt;问题是让一个猎头打开几百个网页，一个一个看，再判断哪些人和自己的项目有关，不划算，很多人也懒得做，做多了会腻。&lt;/p&gt;
+&lt;p&gt;Agent 出现以后，可以批量把这些公开信息找出来、整理、分类，再根据项目进行筛选。如下图：我用Agent批量整理了一些讲师名字、公司、岗位方向，这在以前我要花很长时间去整理&lt;/p&gt;
+&lt;figure&gt;&lt;a href=&quot;/images/articles/ai-driven-company-talent.png&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;img src=&quot;/images/articles/ai-driven-company-talent.png&quot; alt=&quot;Agent整理技术大会与讲师信息&quot; width=&quot;1440&quot; height=&quot;824&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;/&gt;&lt;/a&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;section-8&quot;&gt;4、公司过去积累的人才库，也可以被重新激活&lt;/h3&gt;
+&lt;p&gt;一个新的项目进来，很多顾问去招聘网站找，其实有的候选人就藏在你的公司人才库里，如果你有Agent可以直接让他去翻一圈你本来的人才库&lt;/p&gt;
+&lt;p&gt;不过要满足2个条件&lt;/p&gt;
+&lt;p&gt;人才库打好了标签&lt;/p&gt;
+&lt;p&gt;人才库的API接口放开(这是我为什么建议不大的公司直接用飞书)&lt;/p&gt;
+&lt;p&gt;也就是：原来你看不见、看不过来、懒得看的大量人才，现在开始可以被你利用了(非常重要)&lt;/p&gt;
+&lt;hr/&gt;&lt;h2 id=&quot;section-9&quot;&gt;三、顾问的谈判力(最容易忽略的一块)&lt;/h2&gt;
+&lt;h3 id=&quot;section-10&quot;&gt;1、很多人觉得这个主要靠人，没错，但是从组织的角度，Agent让这件事复用更便捷，新顾问的能力提升大大加速&lt;/h3&gt;
+&lt;p&gt;一个新人为什么需要半年、一年，甚至更长时间才能成为成熟顾问？&lt;/p&gt;
+&lt;p&gt;因为很多东西不是看一本 SOP 就能学会的。&lt;/p&gt;
+&lt;p&gt;他需要听优秀顾问怎么谈，需要自己不断打电话摸索，需要不断犯错，再让 Leader 帮他复盘。&lt;/p&gt;
+&lt;h3 id=&quot;section-11&quot;&gt;2、而一家成熟猎头公司，其实已经拥有大量可以学习的经验&lt;/h3&gt;
+&lt;p&gt;优秀顾问的电话录音、成功案例、失败案例、Offer谈判、候选人反悔、客户拒绝……&lt;/p&gt;
+&lt;p&gt;这些其实都是非常有价值的训练数据。&lt;/p&gt;
+&lt;p&gt;问题是以前这些经验大量存在老员工脑子里、微信聊天记录里和录音里面。&lt;/p&gt;
+&lt;p&gt;新人很难真正调用。或者想用，很麻烦&lt;/p&gt;
+&lt;p&gt;现在可以把优秀顾问的录音、案例、复盘不断放进公司的知识库。&lt;/p&gt;
+&lt;p&gt;新人遇到问题的时候，可以直接和知识库互动，比如我的会员一直在用我的知识库互动，这里有大量我写的方法论和案例库&lt;/p&gt;
+&lt;figure&gt;&lt;a href=&quot;/images/articles/ai-driven-company-training.png&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;img src=&quot;/images/articles/ai-driven-company-training.png&quot; alt=&quot;通过猎头智能体复盘候选人沟通录音&quot; width=&quot;1384&quot; height=&quot;754&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;/&gt;&lt;/a&gt;&lt;/figure&gt;
+&lt;hr/&gt;&lt;h2 id=&quot;section-12&quot;&gt;四、组织能力(公司层面的提升)&lt;/h2&gt;
+&lt;h3 id=&quot;section-13&quot;&gt;1、随便看一个猎头公司里非常常见的重复劳动&lt;/h3&gt;
+&lt;p&gt;假设一家公司有3个顾问同时开始做一个人形机器人执行器项目。&lt;/p&gt;
+&lt;p&gt;三个人原来都不太懂这个行业。&lt;/p&gt;
+&lt;p&gt;于是A去研究执行器是什么，B也在研究，C也在研究。&lt;/p&gt;
+&lt;p&gt;三个人分别去查产业链、技术路线、目标公司、人才分布。他们在重复劳动&lt;/p&gt;
+&lt;h3 id=&quot;section-14&quot;&gt;2、以前当然可以搭建中台来解决，但是不合算&lt;/h3&gt;
+&lt;p&gt;公司可以成立一个 Research 中台，专门安排一个人研究行业，然后把研究结果提供给所有顾问。理论上完全成立。问题是猎头公司的需求非常碎。&lt;/p&gt;
+&lt;p&gt;今天研究机器人执行器，明天研究世界模型，后天研究液冷，再后天可能研究海外财务BP。&lt;/p&gt;
+&lt;p&gt;一个 Researcher 不可能每个行业都专业。于是就会出现一个很尴尬的问题：&lt;/p&gt;
+&lt;p&gt;研究得浅，顾问觉得还不如自己研究；&lt;/p&gt;
+&lt;p&gt;研究得深，就需要更多专业的人，公司养不起。&lt;/p&gt;
+&lt;h3 id=&quot;section-15&quot;&gt;3、Agent把知识中台的生产成本打下来了&lt;/h3&gt;
+&lt;p&gt;比如我的会员用了我的项目启动skill,一个新的项目进来以后，把公司、JD和基本需求交给 Agent。&lt;/p&gt;
+&lt;p&gt;Agent 自动完成（5分钟）&lt;/p&gt;
+&lt;p&gt;公司研究&lt;/p&gt;
+&lt;p&gt;岗位拆解&lt;/p&gt;
+&lt;p&gt;技术研究&lt;/p&gt;
+&lt;p&gt;产业链梳理&lt;/p&gt;
+&lt;p&gt;目标公司分析&lt;/p&gt;
+&lt;p&gt;人才画像&lt;/p&gt;
+&lt;p&gt;Mapping 方向&lt;/p&gt;
+&lt;p&gt;然后让一个真正懂业务的高级顾问花一点时间审核和纠错。最后员工直接用Agent调用即可&lt;/p&gt;
+&lt;p&gt;这样公司就从“每个人重复学习”，变成了“组织学习一次”，还有大量的组织能力可以用Agent来解决的场景，这里就不细说了&lt;/p&gt;
+&lt;hr/&gt;&lt;h2 id=&quot;section-16&quot;&gt;五、真正的Agent驱动，不是四个地方分别用了Agent&lt;/h2&gt;
+&lt;p&gt;单点使用Agent，只能少量提高效率&lt;/p&gt;
+&lt;p&gt;真正的Agent驱动，是把整个猎头工作流重新串起来&lt;/p&gt;
+&lt;p&gt;把Agent嵌入到你的工作流，而且这套系统会随着公司做项目越来越强&lt;/p&gt;
+&lt;p&gt;如果你也想抓住这个窗口期，把自己的猎头公司逐步改造成一家 AI 驱动的猎头公司，可以看这篇：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.hrquanzi.com/2026/09/07/走进一家猎头公司-用AI把工作流重做了一遍/&quot; style=&quot;color:#0969c3;text-decoration:underline;font-weight:700&quot;&gt;走进一家猎头公司,用AI把工作流重做了一遍&lt;/a&gt;&lt;/p&gt;</summary><category term="AI/工具/效率" scheme="https://www.hrquanzi.com/articles/"/></entry>
 <entry><title>为什么有的猎头，总有新的方法和思路？</title><link href="https://www.hrquanzi.com/2026/08/14/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%9C%89%E7%9A%84%E7%8C%8E%E5%A4%B4-%E6%80%BB%E6%9C%89%E6%96%B0%E7%9A%84%E6%96%B9%E6%B3%95%E5%92%8C%E6%80%9D%E8%B7%AF/"/><id>https://www.hrquanzi.com/2026/08/14/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%9C%89%E7%9A%84%E7%8C%8E%E5%A4%B4-%E6%80%BB%E6%9C%89%E6%96%B0%E7%9A%84%E6%96%B9%E6%B3%95%E5%92%8C%E6%80%9D%E8%B7%AF/</id><published>2026-08-14T18:28:00+08:00</published><updated>2026-11-06T01:39:03+08:00</updated><summary type="html">
 &lt;p&gt;经常有人问我：为什么你总能搞出很多新招数、新思路？&lt;/p&gt;
 &lt;p&gt;我觉得这是一个很好的话题&lt;/p&gt;
